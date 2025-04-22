@@ -1,0 +1,37 @@
+<div class="navbar">
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="navbar-left">
+    <img src="../../png/logo.png" alt="Logo" class="logo" />
+  </div>
+  <div class="navbar-menu-wrapper">
+    <nav class="navbar-menu" id="mainMenu">
+      <a href="javascript:void(0)" onclick="goToHome()">Αρχική</a>
+      <a href="javascript:void(0)" onclick="goToStorage()">Αποθήκη</a>
+      <a href="javascript:void(0)" onclick="goToOrders()">Παραγγελίες</a>
+      <a href="javascript:void(0)" onclick="goToTasks()">Εργασίες</a>
+      <a href="javascript:void(0)" onclick="goToUsers()">Χρήστες</a>
+      <a href="javascript:void(0)" onclick="goToReports()">Αναφορές</a>
+    </nav>
+  </div>
+  <div class="navbar-right">
+    <a href="../menu_pages/profile.html">
+      <img id="profile-pic" alt="Προφίλ" class="profile-img" />
+    </a>
+  </div>
+</div>
+
+<script>
+  const loggedUser = localStorage.getItem("loggedUser");
+  fetch("../../json/user_info.json")
+    .then(response => response.json())
+    .then(users => {
+      const user = users.find(u => u.username === loggedUser);
+      if (user) {
+        document.getElementById("profile-pic").src = user.pic;
+      }
+    })
+    .catch(error => {
+      console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
+      document.getElementById("fullname").textContent = "Χρήστης";
+  });
+</script>

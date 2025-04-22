@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>main-page-cfo</title>
+    <link rel="stylesheet" href="/../../css/pages.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="navbar-left">
+        <img src="../../png/logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="navbar-menu-wrapper">
+        <nav class="navbar-menu" id="mainMenu">
+          <a href="cfo.html">Αρχική</a>
+          <a href="../landing_pages\noaccess.html">Αποθήκη</a>
+          <a href="orders.html">Παραγγελίες</a>
+          <a href="../landing_pages/noaccess.html">Εργασίες</a>
+          <a href="../landing_pages/noaccess.html">Χρήστες</a>
+          <a href="../landing_pages/noaccess.html">Αναφορές</a>
+        </nav>
+      </div>
+      <div class="navbar-right">
+        <a href="profile.html">
+          <img src="../../png/prp.png" alt="Προφίλ" class="profile-img" />
+        </a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
+    </div>
+  
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mainMenu");
+        menu.classList.toggle("show");
+      }
+    </script>
+    
+    <script>
+      const loggedUser = localStorage.getItem("loggedUser");
+      fetch("../../json/user_info.json") // Προσαρμόζεις το path ανάλογα
+        .then(response => response.json())
+        .then(users => {
+          const user = users.find(u => u.username === loggedUser);
+          if (user) {
+            document.getElementById("fullname").textContent = user.fullname;
+          } else {
+            document.getElementById("fullname").textContent = "Χρήστης";
+          }
+        })
+        .catch(error => {
+          console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
+          document.getElementById("fullname").textContent = "Χρήστης";
+      });
+    </script>
+    
+    <script src="../../javascript/menu-loader.js"></script>
+
+    <script src="../../javascript/navigations.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+body {
+  background-color: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+  
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+  
+.login-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  text-align: center;
+}
+  
+.login-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #2a2a2a;
+}
+  
+.login-box p {
+  margin-bottom: 25px;
+  color: #777;
+  font-size: 14px;
+}
+  
+.login-box label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+  
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+  
+.login-box input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+  
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+  
+.login-box button:hover {
+  background-color: #0056b3;
+}
+  
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+  
+.signup-text a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+  
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.signup-text b {
+  color: #ffffff; /* Άσπρο */
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 5px;
+}
+  
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+  
+.info-box {
+  background-color: #e9f2ff;
+  border: 1px solid #c7ddff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 25px;
+  text-align: left;
+  color: #003366;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.1);
+}
+  
+.info-box h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0056b3;
+  text-align: center;
+}
+  
+.info-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+  
+.info-box li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+  
+.cancel-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+  
+.cancel-btn:hover {
+  background-color: #d5d5d5;
+}
+  
+.confirm-delete-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+  
+.confirm-delete-btn:hover {
+  background-color: #007bff;
+}  

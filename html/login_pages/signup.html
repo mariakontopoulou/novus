@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signup</title>
+  <link rel="stylesheet" href="/../css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Δημιουργία Λογαριασμού</h2>
+        <form>
+          <label for="fullname">Ονοματεπώνυμο</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Ονοματεπώνυμο">
+          <label for="username">Όνομα χρήστη</label>
+          <input type="text" id="username" name="username" placeholder="Όνομα χρήστη">
+          <label for="role">Ρόλος</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected hidden>Καμία επιλογή</option>
+            <option value="ceo">CEO</option>
+            <option value="production">Υπεύθυνος Παραγωγής</option>
+            <option value="sales">Υπεύθυνος Πωλήσεων</option>
+            <option value="finance">Υπεύθυνος Λογιστηρίου</option>
+            <option value="worker">Υπάλληλος Εργοστασίου</option>
+          </select>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email">
+          <label for="password">Κωδικός πρόσβασης</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Κωδικός πρόσβασης">
+          </div>
+          <label for="confirm-password">Επιβεβαίωση κωδικού</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••">
+          <a href="signup2.html">
+            <button type="button">Εγγραφή</button>
+          </a>
+        </form>
+        <div class="signup-text">
+          Έχετε ήδη λογαριασμό; <a href="login.html">Σύνδεση</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

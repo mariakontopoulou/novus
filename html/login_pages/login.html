@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/../css/login.css">
+    <script>
+      function login(event) {
+        event.preventDefault();  
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username === "kontopoulou" && password === "123") {
+          window.location.href = "../menu_pages/main-ceo.html";
+          localStorage.setItem("loggedUser", "kontopoulou");
+          localStorage.setItem("role", "ceo")
+        } else if (username === "georgiou" && password === "123") {
+          window.location.href = "../menu_pages/main-cfo.html";
+          localStorage.setItem("loggedUser", "georgiou");
+          localStorage.setItem("role", "cfo")
+        } else if (username === "athanasias" && password === "123") {
+          window.location.href = "../menu_pages/main-sales.html";
+          localStorage.setItem("loggedUser", "athanasias");
+          localStorage.setItem("role", "sales")
+        } else if (username === "tsekos" && password === "123") {
+          window.location.href = "../menu_pages/main-p&o.html";
+          localStorage.setItem("loggedUser", "p&o");
+          localStorage.setItem("role", user.role)
+        } else if (username === "karagiannis" && password === "123") {
+          window.location.href = "../menu_pages/main-worker.html";
+          localStorage.setItem("loggedUser", "karagiannis");
+          localStorage.setItem("role", "worker")
+        } else {
+          alert("Λάθος κωδικός ή όνομα χρήστη! Προσπάθησε ξανά.");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Καλώς ήρθατε!</h2>
+        <p>NOVUS</p>
+        <form onsubmit="login(event)">
+          <label for="username">Όνομα χρήστη</label>
+          <input type="text" id="username" name="username" placeholder="Όνομα χρήστη" required>
+          <label for="password">Κωδικός πρόσβασης</label>
+          <input type="password" id="password" name="password" placeholder="Κωδικός πρόσβασης" required>
+          <button type="submit">Σύνδεση</button>       
+        </form>
+        <div class="signup-text">
+          Δεν έχετε λογαριασμό; <a href="signup.html">Εγγραφή</a>
+        </div>
+        <div class="info-box">
+          <h3>Διαθέσιμοι Λογαριασμοί</h3>
+          <ul>
+            <li><strong>CEO:</strong> kontopoulou | 123</li>
+            <li><strong>Υπεύθυνος Λογιστηρίου:</strong> georgiou | 123</li>
+            <li><strong>Υπεύθυνος	Πωλήσεων:</strong> athanasias | 123</li>
+            <li><strong>Υπεύθυνος Παραγωγής:</strong> tsekos | 123</li>
+            <li><strong>Υπ. Εργοστασίου:</strong> karagiannis | 123</li>
+          </ul>
+        </div>            
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>profile</title>
+    <link rel="stylesheet" href="/../../css/pages.css" />
+    <link rel="stylesheet" href="/../../css/profile.css" />
+  </head>
+
+  <body>
+    <div id="menu"></div>
+    <div class="profile-container">
+      <div class="profile-left">
+        <div class="profile-card">
+          <h2>Το προφίλ μου</h2>
+          <img id="profile-pic" alt="profile" class="profile-avatar">
+          <h3>@<span id="user"></span></h3>
+          <div class="info">
+            <p><b>Ονοματεπώνυμο:</b> <span id="fullname"></span></p>
+            <p><b>Email:</b> <span id="email"></span></p>
+            <p><b>Ρόλος:</b> <span id="role"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-right">
+        <div class="profile-edit-box">
+          <h3 style="margin-bottom: 10px;">Αλλαγή εικόνας προφίλ</h3>
+          <div class="avatar-options" style="display: flex; margin-bottom: 20px;">
+            <img src="../../png/prp.png" alt="Avatar 1">
+            <img src="../../png/pic1.png" alt="Avatar 2">
+            <img src="../../png/pic2.png" alt="Avatar 3">
+            <img src="../../png/pic3.png" alt="Avatar 4">
+            <img src="../../png/pic4.png" alt="Avatar 5">
+            <img src="../../png/pic5.png" alt="Avatar 6">
+          </div>
+          <label>Όνομα χρήστη</label>
+          <input type="text" id="edit-username">
+          <label>Ονοματεπώνυμο</label>
+          <input type="text" id="edit-fullname">
+          <label>Email</label>
+          <input type="text" id="edit-email">
+          <div class="actions">
+            <a href="../login_pages/login.html" class="btn logout-btn">Αποσύνδεση</a>
+            <a href="../landing_pages/deleteaccount.html" class="btn delete-btn">Διαγραφή λογαριασμού</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../javascript/menu-loader.js"></script>
+
+    <script src="../../javascript/navigations.js"></script>
+
+    <script>
+      const loggedUser = localStorage.getItem("loggedUser");
+      fetch("../../json/user_info.json")
+        .then(response => response.json())
+        .then(users => {
+          const user = users.find(u => u.username === loggedUser);
+          if (user) {
+            document.getElementById("user").textContent = user.username;
+            document.getElementById("fullname").textContent = user.fullname;
+            document.getElementById("email").textContent = user.email;
+            document.getElementById("role").textContent = user.role;
+            document.getElementById("profile-pic").src = user.pic;
+            document.getElementById("edit-username").value = user.username;
+            document.getElementById("edit-fullname").value = user.fullname;
+            document.getElementById("edit-email").value = user.email;
+          } else {
+            document.getElementById("fullname").textContent = "Χρήστης";
+          }
+        })
+        .catch(error => {
+          console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
+          document.getElementById("fullname").textContent = "Χρήστης";
+      });
+    </script>
+  </body>
+</html>
