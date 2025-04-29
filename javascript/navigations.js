@@ -2,15 +2,15 @@ function goToHome() {
   const user = localStorage.getItem("role");
 
   if (user === "ceo") {
-    window.location.href = "../menu_pages/main-ceo.html";
+    window.location.href = "../mains/main-ceo.html";
   } else if (user === "cfo") {
-    window.location.href = "../menu_pages/main-cfo.html";
+    window.location.href = "../mains/main-cfo.html";
   } else if (user === "p&o") {
-    window.location.href = "../menu_pages/main-p&o.html";
+    window.location.href = "../mains/main-p&o.html";
   } else if (user === "sales") {
-    window.location.href = "../menu_pages/main-sales.html";
+    window.location.href = "../mains/main-sales.html";
   } else if (user === "worker") {
-    window.location.href = "../menu_pages/main-worker.html";
+    window.location.href = "../mains/main-worker.html";
   } else {
     alert("Προέκυψε πρόβλημα. Συνδεθείτε ξανά.");
     window.location.href = "../login_pages/login.html";

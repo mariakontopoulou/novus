@@ -11,23 +11,23 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         if (username === "kontopoulou" && password === "123") {
-          window.location.href = "../menu_pages/main-ceo.html";
+          window.location.href = "../mains/main-ceo.html";
           localStorage.setItem("loggedUser", "kontopoulou");
           localStorage.setItem("role", "ceo")
         } else if (username === "georgiou" && password === "123") {
-          window.location.href = "../menu_pages/main-cfo.html";
+          window.location.href = "../mains/main-cfo.html";
           localStorage.setItem("loggedUser", "georgiou");
           localStorage.setItem("role", "cfo")
         } else if (username === "athanasias" && password === "123") {
-          window.location.href = "../menu_pages/main-sales.html";
+          window.location.href = "../mains/main-sales.html";
           localStorage.setItem("loggedUser", "athanasias");
           localStorage.setItem("role", "sales")
         } else if (username === "tsekos" && password === "123") {
-          window.location.href = "../menu_pages/main-p&o.html";
+          window.location.href = "../mains/main-p&o.html";
           localStorage.setItem("loggedUser", "p&o");
           localStorage.setItem("role", user.role)
         } else if (username === "karagiannis" && password === "123") {
-          window.location.href = "../menu_pages/main-worker.html";
+          window.location.href = "../mains/main-worker.html";
           localStorage.setItem("loggedUser", "karagiannis");
           localStorage.setItem("role", "worker")
         } else {

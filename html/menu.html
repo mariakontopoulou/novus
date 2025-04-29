@@ -22,7 +22,7 @@
 
 <script>
   const loggedUser = localStorage.getItem("loggedUser");
-  fetch("../../json/user_info.json")
+  fetch("../json/user_info.json")
     .then(response => response.json())
     .then(users => {
       const user = users.find(u => u.username === loggedUser);
