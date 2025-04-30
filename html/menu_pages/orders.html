@@ -9,12 +9,52 @@
 
   <body>
     <div id="menu"></div>
+
     <div class="main-content">
-      <h1>Παραγγελίες</h1>
+      <div class="header-row">
+        <h1>Παραγγελίες</h1>
+        <button class="new-order-btn">+ Νέα Παραγγελία</button>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="🔍Αναζήτηση παραγγελίας...">
+      </div>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Αρ. Παραγγελίας</th>
+            <th>Πελάτης</th>
+            <th>Ημ. Καταχώρησης</th>
+            <th>Ημ. Τιμολόγησης</th>
+            <th>Ημ. Παράδοσης</th>
+            <th>Κατάσταση</th>
+            <th>Ενέργειες</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#OR1234</td>
+            <td>Νίκος Παπαδόπουλος</td>
+            <td>27/04/2025</td>
+            <td>28/04/2025</td>
+            <td>30/04/2025</td>
+            <td><span class="status delivered">Ολοκληρωμένη</span></td>
+            <td><button class="action-btn">Προβολή</button></td>
+          </tr>
+          <tr>
+            <td>#OR1235</td>
+            <td>Άννα Δημητρίου</td>
+            <td>27/04/2025</td>
+            <td>–</td>
+            <td>–</td>
+            <td><span class="status pending">Εκκρεμεί</span></td>
+            <td><button class="action-btn">Προβολή</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
 
     <script src="../../javascript/menu-loader.js"></script>
-
     <script src="../../javascript/navigations.js"></script>
   </body>
 </html>

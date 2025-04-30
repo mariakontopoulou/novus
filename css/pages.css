@@ -199,3 +199,117 @@ body {
 .user-actions button {
   margin-left: 10px;
 }
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-row h1 {
+  margin: 0;
+}
+
+.new-order-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.new-order-btn:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.orders-table th {
+  background-color: #f0f4f9;
+  color: #333;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+.orders-table tr:hover {
+  background-color: #f1f9ff;
+}
+
+.status {
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.delivered {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}
