@@ -11,12 +11,13 @@
     <div id="menu"></div>
     <div class="main-content">
       <h1>Οικονομικές Αναφορές</h1>
-
+      <br>
       <div class="period-pdf-row">
         <form>
           <label for="period">Περίοδος:</label>
           <select id="period">
             <option value="" disabled selected hidden>Τελευταίες 7 ημέρες</option>
+            <option value="1m">Τελευταίες 7 ημέρες</option>
             <option value="1m">Τελευταίος 1 μήνας</option>
             <option value="3m">Τελευταίοι 3 μήνες</option>
             <option value="6m">Τελευταίοι 6 μήνες</option>
@@ -26,21 +27,19 @@
         </form>
         <button>Κατέβασε την πλήρη αναφορά σε PDF</button>
       </div>
-
       <hr>
-
       <div class="overview-section">
         <div class="card2">
           <h3>Κέρδος</h3>
-          <div class="profit-number">€200.000</div>
+          <div class="profit-number">22.000 €</div>
           <p class="positive">+22% σε σχέση με την προηγούμενη περίοδο</p>
         </div>
         <div class="card">
           <h3>Έσοδα</h3>
-          <div class="profit-number">36.000 €</div>
+          <div class="profit-number2">36.000 €</div>
           <hr>
           <h3>Έξοδα</h3>
-          <div class="profit-number">14.000 €</div>
+          <div class="profit-number2">14.000 €</div>
         </div>
         <div class="card">
           <h3>Επισκόπιση</h3>
@@ -49,28 +48,45 @@
           <hr>
           <p>Έξοδα: 14.000 €</p>
           <hr>
-          <p>Περιθώριο κέρδους: 40%</p>
+          <p>Περιθώριο κέρδους: 61,1 %</p>
         </div>
       </div>
-
       <hr>
-
       <h3>Έσοδα vs Έξοδα</h3>
-      <img src="../../png/graph1.png" alt="graph1" class="graph" />
-
+      <img src="../../png/graph1.png" alt="graph1" class="graph1" />
       <hr>
-
       <h3>Ανάλυση Εξόδων</h3>
-      <div class="breakdown">
-        <p>Πρώτες ύλες — 5.600 € (40%)</p>
-        <p>Μισθοί εργαζομένων — 4.200 € (30%)</p>
-        <p>Πάγια έξοδα — 2.100 € (15%)</p>
-        <p>Λοιπά έξοδα — 2.100 € (15%)</p>
+      <br>
+      <div class="analysis-and-graph">
+        <div class="card">
+          <div class="breakdown">
+            <div class="row">
+              <span>Πρώτες ύλες</span>
+              <span>5.600 €</span>
+              <span>40%</span>
+            </div>
+            <div class="row">
+              <span>Μισθοί εργαζομένων</span>
+              <span>4.200 €</span>
+              <span>30%</span>
+            </div>
+            <div class="row">
+              <span>Πάγια έξοδα</span>
+              <span>2.100 €</span>
+              <span>15%</span>
+            </div>
+            <div class="row">
+              <span>Λοιπά έξοδα</span>
+              <span>2.100 €</span>
+              <span>15%</span>
+            </div>
+          </div>
+        </div>
+        <img src="../../png/graph2.png" alt="graph2" class="graph2" />
       </div>
-      <img src="../../png/graph2.png" alt="grapg2" class="graph" />
     </div>
-
+    
     <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>
-    </body>
+  </body>
 </html>

@@ -1,7 +1,6 @@
 <div class="navbar">
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <div class="navbar-left">
-    <img src="../../png/logo.png" alt="Logo" class="logo" />
+    <img src="/png/logo.png" alt="Logo" class="logo" />
   </div>
   <div class="navbar-menu-wrapper">
     <nav class="navbar-menu" id="mainMenu">
@@ -15,23 +14,19 @@
   </div>
   <div class="navbar-right">
     <a href="../menu_pages/profile.html">
-      <img id="pic" alt="Προφίλ" class="profile-img" />
+      <img id="profpic" alt="Προφίλ" class="logo">
     </a>
   </div>
 </div>
 
 <script>
   const loggedUser = localStorage.getItem("loggedUser");
-  fetch("../json/user_info.json")
+  fetch("/json/user_info.json")
     .then(response => response.json())
     .then(users => {
-      const user = users.find(u => u.username === loggedUser);
+      const user = users.find(user => user.username === loggedUser);
       if (user) {
-        document.getElementById("pic").src = user.pic;
+        document.getElementById("profpic").src = user.pic;
       }
     })
-    .catch(error => {
-      console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
-      document.getElementById("fullname").textContent = "Χρήστης";
-  });
 </script>
