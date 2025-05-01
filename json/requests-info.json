@@ -1,0 +1,23 @@
+[
+    {
+      "username": "malaki",
+      "fullname": "Ιωάννα Μαλάκη",
+      "email": "ioannamal@gmail.com",
+      "role": "Υπάλληλος Εργοστασίου",
+      "pic": "../../png/prp.png"
+    },
+    {
+      "username": "psirris",
+      "fullname": "Ιωάννης Ψυρρής",
+      "email": "johnpsyr05@gmail.com",
+      "role": "CEO",
+      "pic": "../../png/prp.png"
+    },
+    {
+      "username": "marow",
+      "fullname": "Μάριοw Σταυρίδης",
+      "email": "mariowstav@gmail.com",
+      "role": "Υπάλληλος Εργοστασίου",
+      "pic": "../../png/prp.png"
+    }
+]

@@ -1,0 +1,384 @@
+
+    
+  body {
+    background-color: #f4f7fb;
+  }
+    
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    background-color: #007bff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    border-radius: 12px;
+    margin: 16px;
+    color: white;
+  }
+  
+  .logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+    
+  .navbar-menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: clamp(16px, 1.3vw, 18px);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+    
+  .navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+    
+  .profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    flex-shrink: 0;
+  }
+    
+  .welcome-text {
+    font-size: clamp(14px, 1.1vw, 16px);
+    color: #f4f4f4;
+  }
+  
+  .logout-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: clamp(14px, 1.1vw, 16px);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+    
+  .logout-btn:hover {
+    background-color: #003f8a;
+  }
+    
+  .logout-btn::before {
+    content: "↩ ";
+  }
+  
+  .main-content {
+    padding: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: nowrap;
+    }
+    
+    .navbar-menu {
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .navbar-right {
+      justify-content: flex-start;
+      width: 100%;
+      gap: 10px;
+    }
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+   
+  .navbar-menu-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }    
+  
+  .users-container {
+    max-width: 100px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .user-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .user-info div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-info strong {
+    font-size: 18px;
+    color: #2a2a2a;
+  }
+  
+  .user-info span {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .user-actions button {
+    margin-left: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .grey-button {
+    background-color: #e0e0e0;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+    
+  .grey-button:hover {
+    background-color: #d5d5d5;
+  }
+    
+  .blue-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+    
+  .blue-button:hover {
+    background-color: #007bff;
+  }
+  
+  .confirmation-banner {
+    display: none; /* Κρυφό αρχικά */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Μισοδιάφανο μαύρο φόντο */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .text-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .text-box h1 {
+    font-size: 22px;
+    color: #d8000c;
+    margin-bottom: 10px;
+  }
+  
+  .text-box h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .text-box p {
+    font-size: 14px;
+    color: #847f7f;
+    margin-bottom: 25px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7fb;
+    font-size: 16px;
+    color: #333;
+  }
+  
+
+  
+  h1, h2, h3, h4 {
+    color: #2a2a2a;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin: 1px 0;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+    color: #4CAF50;
+    margin-top: 1px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #777;
+  }
+  
+  select, button {
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  select:focus, button:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  hr {
+    border: 0;
+    height: 2px;
+    background-color: #3a3a3a75;
+    margin: 10px 0;
+    border-radius: 2px;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .period-pdf-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* κρατά responsive συμπεριφορά */
+  }
+  
+  .pdf-button {
+    white-space: nowrap; /* αποτρέπει σπάσιμο κειμένου */
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    align-items: center;
+  }
+  
+  .card2 {
+    background: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    align-items: center;
+  }
+
+  .overview-section {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .profit-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+  
+  .positive {
+    color: green;
+    font-weight: 600;
+  }
+  
+  .graph {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 16px;
+    border: 2px solid #d0d7e2; /* απαλή μπλε-γκρι απόχρωση */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 8px;
+    background-color: #ffffff;
+  }

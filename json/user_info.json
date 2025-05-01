@@ -4,34 +4,34 @@
     "fullname": "Μαρία Κοντοπούλου",
     "email": "kontopmk@gmail.com",
     "role": "CEO",
-    "pic": "../png/pic1.png"
+    "pic": "../../png/pic1.png"
   },
   {
     "username": "georgiou",
     "fullname": "Στεφανία Γεωργίου",
     "email": "stephaniegeorgiou05@gmail.com",
     "role": "Υπεύθυνος Λογιστηρίου",
-    "pic": "../png/pic2.png"
+    "pic": "../../png/pic2.png"
   },
   {
     "username": "athanasias",
     "fullname": "Στέλιος Αθανασιάς",
     "email": "athanasiasste@gmail.com",
     "role": "Υπεύθυνος Πωλήσεων",
-    "pic": "../png/pic3.png"
+    "pic": "../../png/pic3.png"
   }, 
   {
     "username": "tsekos",
     "fullname": "Άγγελος Τσέκος",
     "email": "aggelostsekos2005@gmail.com",
     "role": "Υπεύθυνος Παραγωγής",
-    "pic": "../png/pic4.png"
+    "pic": "../../png/pic4.png"
   },
   {
     "username": "karagiannis",
     "fullname": "Νίκος Καραγιάννης",
     "email": "nickkarag13@gmail.com",
     "role": "Υπάλληλος Εργοστασίου",
-    "pic": "../png/pic5.png"
+    "pic": "../../png/pic5.png"
   }
 ]

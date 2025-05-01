@@ -10,56 +10,29 @@
   <body>
     <div id="menu"></div>
     <div class="main-content">
-      <h1>Χρήστες</h1>
+      <h1>Χρήστες<br><br></h1>
+      <div id="users"></div>
+      <h1><br>Αιτήματα<br><br></h1>
+      <div id="requests"></div>
     </div>
-    <div class="user-card">
-      <div class="user-info">
-        <img src="../../png/pic1.png" alt="User Avatar">
+    
+    <!-- Banner Επιβεβαίωσης Διαγραφής -->
+    <div id="confirmation-banner" class="confirmation-banner">
+      <div class="text-box">
+        <h1>ΠΡΟΣΟΧΗ</h1>
+        <p>Είστε βέβαιοι ότι θέτε να διαγράψετε αυτό το αίτημα;<br>Αυτή η ενέργεια δεν μπορεί να αναιρεθεί!</p>
         <div>
-          <strong>Μαρία Κοντοπούλου</strong>
-          <span>(Εσείς)</span>
+          <button id="confirm-delete" class="btn blue-button">Επιβεβαίωση</button>
+          <button id="cancel-delete" class="btn grey-button">Ακύρωση</button>
         </div>
       </div>
     </div>
-    <div class="user-card">
-      <div class="user-info">
-        <img src="../../png/pic2.png" alt="User Avatar">
-        <div>
-          <strong>Στεφανία Γεωργίου</strong>
-          <span>Υπεύθυνη Λογιστηρίου</span>
-        </div>
-      </div>
-    </div>
-    <div class="user-card">
-      <div class="user-info">
-        <img src="../../png/pic3.png" alt="User Avatar">
-        <div>
-          <strong>Στέλιος Αθανασιάς</strong>
-          <span>Υπεύθυνος Πωλήσεων</span>
-        </div>
-      </div>
-    </div>
-    <div class="user-card">
-      <div class="user-info">
-        <img src="../../png/pic4.png" alt="User Avatar">
-        <div>
-          <strong>Άγγελος Τσέκος</strong>
-          <span>Υπεύθυνος Παραγωγής</span>
-        </div>
-      </div>
-    </div>
-    <div class="user-card">
-      <div class="user-info">
-        <img src="../../png/pic5.png" alt="User Avatar">
-        <div>
-          <strong>Νίκος Καραγιάννης</strong>
-          <span>Υπάλληλος Εργοστασίου</span>
-        </div>
-      </div>
-    </div>
+
 
     <script src="../../javascript/menu-loader.js"></script>
-
     <script src="../../javascript/navigations.js"></script>
+    <script src="../../javascript/users-loader.js"></script>
+    <script src="../../javascript/requests-loader.js"></script>
   </body>
+  
 </html>

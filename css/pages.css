@@ -356,3 +356,83 @@ body {
 .submit-btn:hover {
   background-color: #0056b3;
 }
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.grey-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+  
+.grey-button:hover {
+  background-color: #d5d5d5;
+}
+  
+.blue-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+  
+.blue-button:hover {
+  background-color: #007bff;
+}
+
+.confirmation-banner {
+  display: none; /* Κρυφό αρχικά */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Μισοδιάφανο μαύρο φόντο */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.text-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.text-box h1 {
+  font-size: 22px;
+  color: #d8000c;
+  margin-bottom: 10px;
+}
+
+.text-box h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.text-box p {
+  font-size: 14px;
+  color: #847f7f;
+  margin-bottom: 25px;
+}
+
+hr {
+  border: 0;
+  height: 1.5px;
+  background-color: #7d787869; /* Μπορείς να αλλάξεις το χρώμα */
+  margin: 20px 0; /* Κενό πάνω και κάτω από τη γραμμή */
+}

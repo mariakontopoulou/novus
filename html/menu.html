@@ -15,7 +15,7 @@
   </div>
   <div class="navbar-right">
     <a href="../menu_pages/profile.html">
-      <img id="profile-pic" alt="Προφίλ" class="profile-img" />
+      <img id="pic" alt="Προφίλ" class="profile-img" />
     </a>
   </div>
 </div>
@@ -27,7 +27,7 @@
     .then(users => {
       const user = users.find(u => u.username === loggedUser);
       if (user) {
-        document.getElementById("profile-pic").src = user.pic;
+        document.getElementById("pic").src = user.pic;
       }
     })
     .catch(error => {
