@@ -4,10 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Εργασίες</title>
+  <link rel="stylesheet" href="/../../css/pages.css" />
   <style>
-    /* Base Reset & Fonts */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #f4f7fb; color: #333; font-size: 16px; }
+
+/* Base Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+  color: #333;
+  font-size: 16px;
+}
 
 /* Navbar */
 .navbar {
@@ -17,42 +29,47 @@
   padding: 12px 30px;
   background-color: #007bff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  flex-wrap: nowrap;
   border-radius: 12px;
   margin: 16px;
   color: white;
 }
 
-.logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
 
 .navbar-menu-wrapper {
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items: center;
 }
 
 .navbar-menu {
   display: flex;
   gap: 18px;
+  flex: 1;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .navbar-menu a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: clamp(16px, 1.3vw, 18px);
   padding: 6px 12px;
   border-radius: 6px;
   transition: all 0.3s;
 }
 
-.navbar-menu a:hover {
-  background-color: rgba(255, 255, 255, 0);
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .navbar-right {
@@ -95,24 +112,36 @@
   content: "↩ ";
 }
 
+/* Responsive Navbar */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navbar-menu-wrapper {
+    display: none;
+    width: 100%;
+  }
+  .navbar-menu {
+    flex-direction: column;
+    background-color: #007bff;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .navbar-menu.show {
+    display: flex;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
   }
-  
-  .navbar-menu-wrapper {
-    width: 100%;
-    justify-content: space-between;
-  }
-  
   .navbar-menu {
     justify-content: center;
     width: 100%;
-    margin-top: 10px;
   }
-  
   .navbar-right {
     justify-content: flex-start;
     width: 100%;
@@ -120,56 +149,180 @@
   }
 }
 
-    /* Main Content */
-    .main-content { padding: 30px; max-width:1200px; margin:auto; }
+/* Main Content & Layout */
+.main-content {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    /* Tasks Header */
-    .heading-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
-    .heading-row h1 { font-size:2rem; color:#2a2a2a; }
-    .btn-new-task { padding:8px 16px; background-color:#007bff; color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:bold; font-size:14px; transition:0.3s; }
-    .btn-new-task:hover { background-color:#0056b3; }
+/* Tasks Header */
+.heading-row,
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.heading-row h1,
+.header-row h1 {
+  font-size: 2rem;
+  color: #2a2a2a;
+}
+.btn-new-task,
+.new-order-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.btn-new-task:hover,
+.new-order-btn:hover {
+  background-color: #0056b3;
+}
 
-    /* Search Bar */
-    .search-bar { width:100%; max-width:400px; margin-bottom:30px; }
-    .search-bar input { width:100%; padding:10px 14px; border:1px solid #ccc; border-radius:8px; font-size:14px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
-    .search-bar input:focus { outline:none; border-color:#007bff; box-shadow:0 0 0 2px rgba(0,123,255,0.2); }
+/* Search Bar */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.search-bar input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
 
-    /* Tasks Grid */
-    .tasks-list { display:grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
-    .task-card {
-      background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05);
-      display:flex; flex-direction:column; padding:20px;
-    }
-    .task-card-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
-    .task-card-header h2 { font-size:1.25rem; color:#4CAF50; }
-    .order-info { font-size:0.9rem; color:#777; }
-    .badge { padding:6px 10px; border-radius:8px; font-size:13px; font-weight:bold; }
-    .badge-completed { background-color:#d4edda; color:#155724; }
-    .badge-pending { background-color:#fff3cd; color:#856404; }
-    .badge-in-progress { background-color:#007bff; color:#fff; }
+/* Tasks Grid & Cards */
+.tasks-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.task-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.task-card-header h2 {
+  font-size: 1.25rem;
+  color: #4CAF50;
+}
+.order-info {
+  font-size: 0.9rem;
+  color: #777;
+}
+.badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.badge-completed { background-color: #d4edda; color: #155724; }
+.badge-pending   { background-color: #fff3cd; color: #856404; }
+.badge-in-progress { background-color: #007bff; color: #fff; }
 
-    .due-date { font-size:0.95rem; margin-bottom:10px; color:#777; }
-    .task-steps { list-style:none; margin-bottom:15px; }
-    .task-steps li { display:flex; align-items:center; font-size:0.95rem; margin-bottom:8px; }
-    .task-steps li.completed { text-decoration:line-through; color:#999; }
-    .task-steps input { margin-right:8px; accent-color:#007bff; }
+.due-date {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #777;
+}
+.task-steps {
+  list-style: none;
+  margin-bottom: 15px;
+}
+.task-steps li {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.task-steps li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+.task-steps input {
+  margin-right: 8px;
+  accent-color: #007bff;
+}
 
-    .task-card-footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; }
-    .last-updated { font-size:0.8rem; color:#777; }
-    .btn-details { background:none; border:none; color:#007bff; cursor:pointer; font-size:0.95rem; }
+.task-card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.last-updated {
+  font-size: 0.8rem;
+  color: #777;
+}
+.btn-details {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
 
-    /* Modal */
-    .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; z-index:1000; }
-    .modal-overlay.hidden { display:none; }
-    .modal { background:#fff; border-radius:12px; padding:30px; max-width:500px; width:90%; box-shadow:0 4px 15px rgba(0,0,0,0.05); position:relative; }
-    .modal-close { position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; }
-    .modal-order, .modal-dates { margin:10px 0; color:#777; }
-    .modal-steps h4 { margin-top:20px; color:#2a2a2a; }
-    .modal-steps ul { list-style:none; padding:0; margin-bottom:15px; }
-    .modal-steps li { margin-bottom:8px; font-size:0.95rem; }
-    .progress-container { background:#eee; border-radius:8px; height:12px; overflow:hidden; margin-bottom:8px; }
-    .progress-bar { width:0; height:100%; background:#28a745; transition:width 0.5s ease-in-out; }
-    #modal-percent { font-size:0.9rem; color:#777; }
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-overlay.hidden { display: none; }
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-order, .modal-dates { margin: 10px 0; color: #777; }
+.modal-steps h4 { margin-top: 20px; color: #2a2a2a; }
+.modal-steps ul { list-style: none; padding: 0; margin-bottom: 15px; }
+.modal-steps li { margin-bottom: 8px; font-size: 0.95rem; }
+.progress-container { background: #eee; border-radius: 8px; height: 12px; overflow: hidden; margin-bottom: 8px; }
+.progress-bar { width: 0; height: 100%; background: #28a745; transition: width 0.5s ease-in-out; }
+#modal-percent { font-size: 0.9rem; color: #777; }
+
   </style>
 </head>
 
@@ -178,22 +331,7 @@
 
 
 <body>
-  <nav class="navbar">
-    <div class="navbar-menu-wrapper">
-      <img src="logo.png" class="logo" alt="Company Logo">
-      <div class="navbar-menu">
-        <a href="#">Αρχική</a>
-        <a href="#" class="active">Εργασίες</a>
-        <a href="#">Αποθήκη</a>
-        <a href="#">Παραγγελίες</a>
-      </div>
-    </div>
-    <div class="navbar-right">
-      <span class="welcome-text">Καλώς ήρθες, <span id="fullname"></span>!</span>
-      <img src="profile.jpg" class="profile-img" alt="User Profile">
-      <button class="logout-btn">Αποσύνδεση</button>
-    </div>
-  </nav>
+  <div id="menu"></div>
 
   <div class="main-content">
     <div class="heading-row">
