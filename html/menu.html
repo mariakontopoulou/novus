@@ -14,19 +14,7 @@
   </div>
   <div class="navbar-right">
     <a href="../menu_pages/profile.html">
-      <img id="profpic" alt="Προφίλ" class="logo">
+      <img src="/png/profile.png" alt="Προφίλ" class="logo">
     </a>
   </div>
 </div>
-
-<script>
-  const loggedUser = localStorage.getItem("loggedUser");
-  fetch("/json/user_info.json")
-    .then(response => response.json())
-    .then(users => {
-      const user = users.find(user => user.username === loggedUser);
-      if (user) {
-        document.getElementById("profpic").src = user.pic;
-      }
-    })
-</script>
