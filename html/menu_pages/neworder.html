@@ -18,22 +18,62 @@
         </div>
 
         <div class="form-group">
+          <label for="phone">Τηλέφωνο Πελάτη</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+        </div>
+      
+        <div class="form-group">
+          <label for="email">Email Πελάτη</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
           <label for="orderDate">Ημερομηνία Καταχώρησης</label>
           <input type="date" id="orderDate" name="orderDate" required />
         </div>
 
         <div class="form-group">
-          <label for="deliveryDate">Ημερομηνία Παράδοσης</label>
+          <label for="deliveryDate">Επιθυμητή Ημερομηνία Παράδοσης</label>
           <input type="date" id="deliveryDate" name="deliveryDate" required />
         </div>
 
         <div class="form-group">
-          <label for="status">Κατάσταση</label>
-          <select id="status" name="status">
-            <option value="Εκκρεμεί">Εκκρεμεί</option>
-            <option value="Ολοκληρώθηκε">Ολοκληρώθηκε</option>
-            <option value="Ακυρώθηκε">Σε εξέλιξη</option>
+          <label for="size">Μέγεθος Ομπρέλας</label>
+          <input type="text" id="size" name="size" placeholder="π.χ. 3x3" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fabricColor">Χρώμα Πανιού</label>
+          <input type="text" id="fabricColor" name="fabricColor" required />
+        </div>
+
+        <div class="form-group">
+          <label for="frameColor">Χρώμα Σκελετού</label>
+          <input type="text" id="frameColor" name="frameColor" required />
+        </div>
+
+        <div class="form-group">
+          <label for="hasBase">Θέλει Βάση;</label>
+          <select id="hasBase" name="hasBase" required>
+            <option value="">-- Επιλέξτε --</option>
+            <option value="Ναι">Ναι</option>
+            <option value="Όχι">Όχι</option>
           </select>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Τύπος Ομπρέλας</label>
+          <input type="text" id="type" name="type" placeholder="π.χ. Κεντρικός Ιστός" required />
+        </div>
+
+        <div class="form-group">
+          <label for="unitPrice">Τιμή Μονάδας (€)</label>
+          <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Τεμάχια Ομπρέλας</label>
+          <input type="number" id="quantity" name="quantity" min="1" required />
         </div>
 
         <button type="submit" class="submit-btn">Καταχώρηση</button>
