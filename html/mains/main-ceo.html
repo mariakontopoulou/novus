@@ -4,15 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main-page-ceo</title>
-    <link rel="stylesheet" href="/../../css/pages.css">
     <link rel="stylesheet" href="/../../css/menu.css">
+    <link rel="stylesheet" href="/../../css/mains.css">
   </head>
 
   <body>
     <div id="menu"></div>
-  
+
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
+    </div>
+  
+    <div class="dashboard">
+      <header>
+        <h1>Η ISKIOS Professional Umbrellas με μια ματιά !</h1>
+      </header>
+      <section class="box">
+        <h2>Παραγγελίες</h2>
+        <ul>
+          <li><span class="dot blue"></span> 35 Νέες Παραγγελίες</li>
+          <li><span class="dot orange"></span> 120 Σε Εξέλιξη</li>
+          <li><span class="dot green"></span> 8 Απεσταλμένες</li>
+        </ul>
+      </section>
+      <section class="box">
+        <h2>Παραγωγή</h2>
+        <ul>
+          <li>Απόδοση παραγωγής: 92%</li>
+          <li>Έγκαιρες παραδόσεις: 86%</li>
+          <li>Μέσος χρόνος παράδοσης: 12,5 ημέρες</li>
+        </ul>
+      </section>
+      <section class="box">
+        <h2>Όγκος Παραγγελιών</h2>
+        <div class="bar-chart">
+          <div class="bar" style="height: 90%;">Ιουν</div>
+          <div class="bar" style="height: 85%;">Ιουλ</div>
+          <div class="bar" style="height: 95%;">Αυγ</div>
+          <div class="bar" style="height: 80%;">Σεπ</div>
+          <div class="bar" style="height: 70%;">Οκτ</div>
+          <div class="bar" style="height: 60%;">Νοε</div>
+          <div class="bar" style="height: 50%;">Δεκ</div>
+          <div class="bar" style="height: 40%;">Ιαν</div>
+          <div class="bar" style="height: 40%;">Φεβ</div>
+          <div class="bar" style="height: 60%;">Μαρ</div>
+          <div class="bar" style="height: 85%;">Απρ</div>
+          <div class="bar" style="height: 90%;">Μαι</div>
+        </div>
+      </section>
+      <section class="box">
+        <h2>Κατανομή Εργασιών</h2>
+        <div class="task">
+          <label>Κοπή Υφάσματος</label>
+          <div class="progress"><div style="width: 25%;"></div></div>
+        </div>
+        <div class="task">
+          <label>Ραφή</label>
+          <div class="progress"><div style="width: 35%;"></div></div>
+        </div>
+        <div class="task">
+          <label>Συναρμολόγηση Σκελετού</label>
+          <div class="progress"><div style="width: 40%;"></div></div>
+        </div>
+      </section>
+      <section class="box">
+        <h2>Αποθέματα</h2>
+        <ul>
+          <li><span class="dot red"></span>Πλαστικά εξαρτήματα – 5%</li>
+          <li><span class="dot orange"></span>Έτοιμα προϊόντα – 30%</li>
+          <li><span class="dot yellow"></span>Πανιά – 50%</li>
+          <li><span class="dot green"></span>Αλουμήνια – 75%</li>
+        </ul>
+      </section>
+      <section class="box">
+        <h2>Αναφορές</h2>
+        <div class="report-actions-vertical">
+          <button class="btn blue-button" onclick="location.href='../menu_pages/reports.html'">
+            Δες εδώ τις αναφορές
+          </button>
+          <span class="or-text">ή</span>
+          <button class="btn grey-button">
+            Κατέβασε την πλήρη αναφορά σε PDF
+          </button>
+        </div>
+      </section>
     </div>
 
     <script>
