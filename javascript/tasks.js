@@ -38,23 +38,16 @@ if(activeModal) {
       }
     }
   
-    // Πρόσθεσε listener σε κάθε checkbox
     checkboxes.forEach((cb, idx) => {
-      // αρχικοποίηση εμφάνισης
       updateLineThrough(cb, stepItems[idx]);
-      //listener
       cb.addEventListener('change', () => {
-        // 1) ενημέρωση line-through
         updateLineThrough(cb, stepItems[idx]);
-        // 2) ενημέρωση badge
         updateCardStatus();
-        // -- εδώ μπορείς να στείλεις και PATCH στο API αν θέλεις --
       });
     });
-  
-    // αρχική ρύθμιση badge
     updateCardStatus();
   });
+  
   document.addEventListener('DOMContentLoaded', () => {
     // Ορισμός συναρτήσεων ΠΡΙΝ από τη χρήση τους
     const initTaskCard = (card) => { /* ... */ };
@@ -64,6 +57,7 @@ if(activeModal) {
       initTaskCard(card);
       addModalListeners(card);
     })})
+
       // Λειτουργία Checkbox
       const initTaskCard = (card) => {
     const badge = card.querySelector('.badge');
@@ -76,7 +70,6 @@ if(activeModal) {
       const total = checkboxes.length;
       const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
       
-      // Ενημέρωση badge
       if(checked === total) {
         badge.className = 'badge badge-completed';
         badge.textContent = 'Ολοκληρώθηκε';
@@ -88,7 +81,6 @@ if(activeModal) {
         badge.textContent = 'Εκκρεμεί';
       }
       
-      // Ενημέρωση ημερομηνίας
       lastUpdated.textContent = new Date().toLocaleDateString('el-GR');
       
       // Ενημέρωση modal αν είναι ανοιχτό
@@ -112,8 +104,7 @@ if(activeModal) {
     });
     updateStatus();
   };
-  
-      // Αρχικοποίηση υπαρχουσών καρτών
+
       document.querySelectorAll('.task-card').forEach(initTaskCard);
   
       // Λειτουργία Modal Λεπτομερειών
@@ -122,17 +113,14 @@ if(activeModal) {
           const card = btn.closest('.task-card');
           const modal = document.getElementById('task-modal-overlay');
           
-              // Συλλογή δεδομένων
               const checkboxes = card.querySelectorAll('input[type="checkbox"]');
               const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
               const total = checkboxes.length;
               const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
   
-              // Ενημέρωση προόδου
               modal.querySelector('#modal-progress').style.width = `${percentage}%`;
               modal.querySelector('#modal-percent').textContent = `${percentage}%`;
-          
-          // Συμπλήρωση περιεχομένου modal
+
           modal.querySelector('#modal-title').textContent = card.querySelector('h2').textContent;
           modal.querySelector('#modal-order').textContent = card.querySelector('.order-info').textContent;
           modal.querySelector('#modal-due').textContent = card.querySelector('.due-date time').textContent;
@@ -200,11 +188,9 @@ if(activeModal) {
         <button class="btn-details">Λεπτομέρειες</button>
       </div>
     `;
-  
-    // Προσθήκη νέας κάρτας
+
     document.querySelector('.tasks-list').prepend(newCard);
     
-    // Αρχικοποίηση λειτουργιών
     initTaskCard(newCard);
     addModalListeners(newCard); // Προσθήκη λειτουργίας modal
     
@@ -217,8 +203,7 @@ if(activeModal) {
     card.querySelector('.btn-details').addEventListener('click', () => {
       const modal = document.getElementById('task-modal-overlay');
       const checkboxes = card.querySelectorAll('input[type="checkbox"]');
-      
-      // Συμπλήρωση περιεχομένου modal
+
       modal.querySelector('#modal-title').textContent = card.querySelector('h2').textContent;
       modal.querySelector('#modal-order').textContent = card.querySelector('.order-info').textContent;
       modal.querySelector('#modal-due').textContent = card.querySelector('.due-date time').textContent;
@@ -233,8 +218,7 @@ if(activeModal) {
         if(li.classList.contains('completed')) newLi.style.textDecoration = 'line-through';
         stepList.appendChild(newLi);
       });
-      
-      // Ενημέρωση προόδου
+
       const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
       const total = checkboxes.length;
       const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
