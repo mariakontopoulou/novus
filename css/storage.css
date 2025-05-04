@@ -85,10 +85,6 @@
 .Main-table tr > *:nth-child(4) {
     width: 10%;
 }
-
-.Main-table tr > *:nth-child(5) {
-    width: 8%;
-}
 .Main-table tr > *:nth-child(6) {
     width: 15%;
 }

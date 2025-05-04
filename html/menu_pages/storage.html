@@ -24,13 +24,11 @@
                     <th>Περιγραφή</th>
                     <th>Διαθέσιμο Απόθεμα</th>
                     <th>Μονάδα</th>
-                    <th>Κατάσταση</th>
                     <th>Προμηθευτής</th>
                     <th>Ενέργειες</th>
                 </tr>
             </thead>
-            <tbody
-                
+            <tbody>
             </tbody>
         </table>
     </div>
@@ -49,7 +47,6 @@
           <td>${mat.description}</td>
           <td>${mat.stock}</td>
           <td>${mat.unit}</td>
-          <td>${mat.status}</td>
           <td>${mat.supplier}</td>
           <td><button onclick="window.location.reload()">Ενημέρωση</button></td>
         `;
@@ -58,27 +55,25 @@
     });
     </script>
     <script>
-    let materials = JSON.parse(localStorage.getItem('materials')) || [];
+        let materials = JSON.parse(localStorage.getItem('materials')) || [];
 
-    function renderTable() {
-        const tbody = document.querySelector('#materialsTable tbody');
-        tbody.innerHTML = '';
-        materials.forEach((mat, i) => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${mat.name}</td>
-            <td>${mat.description}</td>
-            <td id="stock-${i}">${mat.stock}</td>
-            <td>${mat.unit}</td>
-            <td>${mat.status}</td>
-            <td>${mat.supplier}</td>
-            <td>
-            <button class="stock-btn" onclick="editStock(${i})">Ενημέρωση</button>
-            </td>
-        `;
-        tbody.appendChild(tr);
-        });
-    }
+        function renderTable() {
+            const tableBody = document.querySelector('#materialsTable tbody');
+            tableBody.innerHTML = '';
+
+            materials.forEach((material, idx) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${material.name}</td>
+                    <td>${material.description}</td>
+                    <td id="stock-${idx}">${material.stock}</td>
+                    <td>${material.unit}</td>
+                    <td>${material.supplier}</td>
+                    <td><button class="stock-btn"onclick="editStock(${idx})">Ενημέρωση</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }    
 
     function editStock(idx) {
         const cell = document.getElementById(`stock-${idx}`);
@@ -86,17 +81,13 @@
         cell.innerHTML = `
             <div class="stock-edit-wrapper">
                 <input
-                type="number"
-                id="input-stock-${idx}"
-                class="stock-input"
-                value="${old}"
-                min="0"
-            >
-            <button
-                onclick="saveStock(${idx})"
-                class="save-stock-btn"
-                title="Αποθήκευση νέας τιμής"
-            >OK</button>
+                    type="number"
+                    id="input-stock-${idx}"
+                    class="stock-input"
+                    value="${old}"
+                    min="0"
+                />
+            <button onclick="saveStock(${idx})" class="save-stock-btn" title="Αποθήκευση νέας τιμής">OK</button>
         </div>
   `;
    }

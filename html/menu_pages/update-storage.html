@@ -26,12 +26,8 @@
             <input type="text" id="input4" required>
         </div>
         <div class="form-group">
-            <label for="input5">Κατάσταση</label>
+            <label for="input5">Προμηθευτής</label>
             <input type="text" id="input5" required>
-        </div>
-        <div class="form-group">
-            <label for="input6">Προμηθευτής</label>
-            <input type="text" id="input6" required>
         </div>
 
       <button type="submit" class="submit-btn">Καταχώρηση</button>
@@ -44,11 +40,10 @@
         const description = document.getElementById('input2').value;
         const stock = document.getElementById('input3').value;
         const unit = document.getElementById('input4').value;
-        const status = document.getElementById('input5').value;
-        const supplier = document.getElementById('input6').value;
+        const supplier = document.getElementById('input5').value;
 
         const materials = JSON.parse(localStorage.getItem('materials')) || [];
-        materials.push({ name, description, stock, unit, status, supplier });
+        materials.push({ name, description, stock, unit, supplier });
         localStorage.setItem('materials', JSON.stringify(materials));
 
 
