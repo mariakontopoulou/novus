@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main-page-ceo</title>
-    <link rel="stylesheet" href="/../../css/pages.css">
+    <title>main-page-worker</title>
+    <link rel="stylesheet" href="/../../css/main-worker.css">
     <link rel="stylesheet" href="/../../css/menu.css">
   </head>
 
@@ -13,7 +13,44 @@
   
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
-    </div>
+      
+      <div class="side-by-side">
+      <div class="section" id="production-stats">
+          <h2>Στατιστικά Παραγωγής</h2>
+          <div class="stats">
+              <div class="stat">
+                  <h3>Αριθμός Παραγγελιών</h3>
+                  <p>350</p>
+              </div>
+              <div class="stat">
+                  <h3>Ποσοστό Ολοκλήρωσης : 70%</h3>
+                  <div class="progress"><div style="width: 70%;"></div></div>
+              </div>
+              <div class="stat">
+                  <h3>Εκκρεμείς Παραγγελίες</h3>
+                  <p>12</p>
+              </div>
+          </div>
+      </div>
+        <div class="section" id="admin-comments">
+          <h2>Σχόλια από το Διοικητικό Τμήμα</h2>
+          <ul>
+            <li><strong>Σχόλιο 1:</strong> Προτεραιότητα στις παραγγελίες του πελάτη X.</li>
+            <hr>
+            <li><strong>Σχόλιο 2:</strong> Ενημέρωση για το νέο σχέδιο παραγωγής που ξεκινά την επόμενη εβδομάδα.</li>
+          </ul>
+        </div>
+      
+        <div class="section" id="employee-recognition">
+          <h2>Αναγνώριση Εργαζομένων</h2>
+          <ul>
+            <li><strong>Μαρία Παπαδοπούλου:</strong> Βοήθησε στην ολοκλήρωση των παραγγελιών για το πελάτη Y.</li>
+            <hr>
+            <li><strong>Γιώργος Κωνσταντίνου:</strong> Πρώτος στην παραγωγική απόδοση για την εβδομάδα.</li>
+          </ul>
+        </div>
+      </div>
+      
 
     <script>
       const loggedUser = localStorage.getItem("loggedUser");
