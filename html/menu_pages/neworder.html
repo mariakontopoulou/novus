@@ -4,87 +4,160 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Νέα Παραγγελία</title>
-    <link rel="stylesheet" href="/../../css/pages.css">
+    <link rel="stylesheet" href="/../../css/neworder.css">
     <link rel="stylesheet" href="/../../css/menu.css">
   </head>
+
   <body>
     <div id="menu"></div>
-
     <div class="main-content">
       <h2>Νέα Παραγγελία</h2>
       <form class="order-form">
-        <div class="form-group">
-          <label for="customer">Ονοματεπώνυμο Πελάτη</label>
-          <input type="text" id="customer" name="customer" required />
+        <div class="column">
+          <h2>Στοιχεία πελάτη</h2>
+          <div class="form-group">
+            <p>Ονοματεπώνυμο</p>
+            <input type="text" id="customer" name="customer" required />
+          </div>  
+          <div class="form-group">
+            <p>Τηλέφωνο</p>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+          </div>        
+          <div class="form-group">
+            <p>Email</p>
+            <input type="email" id="email" name="email" required />
+          </div>  
+          <div class="form-group">
+            <p>Επιθυμητή Ημερομηνία Παράδοσης</p>
+            <input type="date" id="deliveryDate" name="deliveryDate" required />
+          </div>
+          <div class="form-group">
+            <p>Μέθοδος πληρωμής</p>
+            <select id="payment" name="payment" required>
+              <option value="">-- Επιλέξτε --</option>
+              <option value="new">Μετρητά</option>
+              <option value="repair">Κάρτα</option>
+              <option value="repair">Τραπεζική κατάθεση</option>
+              <option value="repair">Επιταγή</option>
+            </select>
+          </div> 
+          <div class="form-group">
+            <p>Παρατηρήσεις</p>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="phone">Τηλέφωνο Πελάτη</label>
-          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+        <div class="column">
+          <h2>Στοιχέια προϊόντος</h2>
+          <div class="form-group">
+            <p>Επιλογή</p>
+            <select id="selection" name="selection" required>
+              <option value="">-- Επιλέξτε --</option>
+              <option value="new">Νέο Προϊόν</option>
+              <option value="repair">Επισκευή Προϊόντος</option>
+              <option value="addons">Συμπληρωματικά Προϊόντα</option>
+            </select>
+          </div>
+          <div id="newProductFields" style="display: none;">
+            <div class="form-group">
+              <p>Τύπος Ομπρέλας</p>
+              <select id="type" name="type" required>
+                <option value="">-- Επιλέξτε --</option>
+                <option value="1">Στρογγυλή</option>
+                <option value="2">Πισίνας - Παραλίας</option>
+                <option value="3">Βαρέως τύπου</option>
+                <option value="4">Υπερ-βαρέως - Τηλεσκοπική</option>
+                <option value="5">Μεγάλων διαστάσεων - ATLAS</option>
+                <option value="6">Με ιστό στο πλάι</option>
+                <option value="7">Ομπρέλα - Τέντα</option>
+                <option value="8">Ηλεκτρική</option>
+              </select>
+            </div>          
+            <div class="form-group">
+              <p>Μέγεθος</p>
+              <input type="text" id="size" name="size" placeholder="π.χ. 3x3" required />
+            </div>          
+            <div class="form-group">
+              <p>Χρώμα πανιού (κωδικός)</p>
+              <input type="text" id="fabricColor" name="fabricColor" required />
+            </div>          
+            <div class="form-group">
+              <p>Χρώμα σκελετού</p>
+              <input type="text" id="frameColor" name="frameColor" required />
+            </div>          
+            <div class="form-group">
+              <p>Βάση</p>
+              <select id="hasBase" name="hasBase" required>
+                <option value="">-- Επιλέξτε --</option>
+                <option value="Όχι">Όχι</option>
+                <option value="1">Φλάντζα</option>
+                <option value="2">Τσιμέντου</option>
+                <option value="3">Πάκτωσης</option>
+                <option value="4">Μεταλλική πλάκα</option>
+              </select>
+            </div>          
+            <div class="form-group">
+              <p>Τιμή μονάδας (€)</p>
+              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
+            </div>          
+            <div class="form-group">
+              <p>Ποσότητα</p>
+              <input type="number" id="quantity" name="quantity" min="1" required />
+            </div>          
+            <div class="form-group">
+              <p>Ειδικές απαιτήσεις | Παρατηρήσεις</p>
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>          
+          <div id="repairFields" style="display: none;">
+            <div class="form-group">
+              <p>Περιγραφή Επισκευής</p>
+              <textarea id="repairDescription" name="repairDescription" rows="4" required></textarea>
+            </div>
+          </div>          
         </div>
-      
-        <div class="form-group">
-          <label for="email">Email Πελάτη</label>
-          <input type="email" id="email" name="email" required />
+        <div class="submit-container">
+          <button type="button" id="addProductBtn" class="submit-btn">Προσθήκη προϊόντος</button>
+          <a href="../landing_pages/submit-order.html" class="submit-btn" style="text-decoration: none; display: inline-block;">Καταχώρηση</a>
         </div>
-
-        <div class="form-group">
-          <label for="orderDate">Ημερομηνία Καταχώρησης</label>
-          <input type="date" id="orderDate" name="orderDate" required />
-        </div>
-
-        <div class="form-group">
-          <label for="deliveryDate">Επιθυμητή Ημερομηνία Παράδοσης</label>
-          <input type="date" id="deliveryDate" name="deliveryDate" required />
-        </div>
-
-        <div class="form-group">
-          <label for="size">Μέγεθος Ομπρέλας</label>
-          <input type="text" id="size" name="size" placeholder="π.χ. 3x3" required />
-        </div>
-
-        <div class="form-group">
-          <label for="fabricColor">Χρώμα Πανιού</label>
-          <input type="text" id="fabricColor" name="fabricColor" required />
-        </div>
-
-        <div class="form-group">
-          <label for="frameColor">Χρώμα Σκελετού</label>
-          <input type="text" id="frameColor" name="frameColor" required />
-        </div>
-
-        <div class="form-group">
-          <label for="hasBase">Βάση Ομπρέλας</label>
-          <select id="hasBase" name="hasBase" required>
-            <option value="">-- Επιλέξτε --</option>
-            <option value="Ναι">Ναι</option>
-            <option value="Όχι">Όχι</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="type">Τύπος Ομπρέλας</label>
-          <input type="text" id="type" name="type" placeholder="π.χ. Κεντρικός Ιστός" required />
-        </div>
-
-        <div class="form-group">
-          <label for="unitPrice">Τιμή Μονάδας (€)</label>
-          <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
-        </div>
-
-        <div class="form-group">
-          <label for="quantity">Τεμάχια Ομπρέλας</label>
-          <input type="number" id="quantity" name="quantity" min="1" required />
-        </div>
-
-        <div class="form-group">
-          <label for="notes">Παρατηρήσεις</label>
-          <textarea id="notes" name="notes" rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Καταχώρηση</button>
       </form>
     </div>
+
+    <script>
+      const selection = document.getElementById("selection");
+      const newProductFields = document.getElementById("newProductFields");
+      const repairFields = document.getElementById("repairFields");
+    
+      selection.addEventListener("change", () => {
+        if (selection.value === "new") {
+          newProductFields.style.display = "block";
+          repairFields.style.display = "none";
+        } else if (selection.value === "repair") {
+          newProductFields.style.display = "none";
+          repairFields.style.display = "block";
+        } else {
+          newProductFields.style.display = "none";
+          repairFields.style.display = "none";
+        }
+      });
+    </script>
+
+    <script>
+      document.getElementById("addProductBtn").addEventListener("click", () => {
+        document.getElementById("selection").value = "";
+        document.getElementById("newProductFields").style.display = "none";
+        document.getElementById("repairFields").style.display = "none";
+        const newProductInputs = document.querySelectorAll("#newProductFields input, #newProductFields select, #newProductFields textarea");
+
+        newProductInputs.forEach(field => {
+          if (field.tagName === "SELECT" || field.tagName === "INPUT" || field.tagName === "TEXTAREA") {
+            field.value = "";
+          }
+        });
+
+        const repairInputs = document.querySelectorAll("#repairFields textarea");
+        repairInputs.forEach(field => field.value = "");
+      });
+    </script>
 
     <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>
