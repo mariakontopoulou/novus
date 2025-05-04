@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>main-page-ceo</title>
-    <link rel="stylesheet" href="/../../css/pages.css" />
+    <title>main-page-cfo</title>
     <link rel="stylesheet" href="/../../css/menu.css" />
+    <link rel="stylesheet" href="/../../css/mains.css" />
   </head>
 
   <body>
@@ -13,6 +13,22 @@
   
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
+    </div>
+
+    <div class="dashboard">
+      <header>
+        <h1>Η ISKIOS Professional Umbrellas με μια ματιά !</h1>
+      </header>
+
+      <section class="box">
+        <h2>Κατάσταση Παραγγελιών</h2>
+        <ul>
+          <li><span class="dot blue"></span> 35 Νέες Παραγγελίες</li>
+          <li><span class="dot orange"></span> 120 Σε Εξέλιξη</li>
+          <li><span class="dot green"></span> 8 Ολοκληρωμένες</li>
+          <li><span class="dot red"></span> 2 Ακυρωμένες</li>
+        </ul>
+      </section>
     </div>
 
     <script>
@@ -30,11 +46,10 @@
         .catch(error => {
           console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
           document.getElementById("fullname").textContent = "Χρήστης";
-      });
+        });
     </script>
-    
-    <script src="../../javascript/menu-loader.js"></script>
 
+    <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>
   </body>
 </html>
