@@ -12,37 +12,109 @@
   <body>
     <div id="menu"></div>
     <div class="main-content">
-      <h1>Αποθήκη</h1>
-      <input type="Text" placeholder="🔍 Αναζήτηση Υλικών" />
-      <button>Προσθήκη Υλικού </button>
+      <h1 id="StHeader">Αποθήκη</h1>
+      <input type="Text" placeholder="🔍 Αναζήτηση Πρώτων Υλών" />
+      <button onclick="window.location.href='update-storage.html'">Προσθήκη Υλικού +</button>
     </div>
     <div class="Main-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Όνομα</th>
-            <th>Περιγραφή</th>
-            <th>Διαθέσιμο Απόθεμα</th>
-            <th>Μονάδα</th>
-            <th>Κατάσταση</th>
-            <th>Προμηθευτής</th>
-            <th>Ενέργειες</th>
-          </tr>
-          <tr>
-            <th>Αλουμίνιο</th>
-            <th>Αλουμίνιο</th>
-            <th>100</th>
-            <th>Κιλά</th>
-            <th>Ενεργό</th>
-            <th>Αλοίμονος</th>
-            <th><button>Ενημέρωση</button></th>
-          </tr>
-        </thead>
-      </table>
+        <table id="materialsTable">
+            <thead>
+                <tr>
+                    <th>Όνομα</th>
+                    <th>Περιγραφή</th>
+                    <th>Διαθέσιμο Απόθεμα</th>
+                    <th>Μονάδα</th>
+                    <th>Κατάσταση</th>
+                    <th>Προμηθευτής</th>
+                    <th>Ενέργειες</th>
+                </tr>
+            </thead>
+            <tbody
+                
+            </tbody>
+        </table>
     </div>
 
     <script src="../../javascript/menu-loader.js"></script>
-
     <script src="../../javascript/navigations.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+      const materials = JSON.parse(localStorage.getItem('materials')) || [];
+      const tbody = document.querySelector('#materialsTable tbody');
+
+      materials.forEach(mat => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${mat.name}</td>
+          <td>${mat.description}</td>
+          <td>${mat.stock}</td>
+          <td>${mat.unit}</td>
+          <td>${mat.status}</td>
+          <td>${mat.supplier}</td>
+          <td><button onclick="window.location.reload()">Ενημέρωση</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+    </script>
+    <script>
+    let materials = JSON.parse(localStorage.getItem('materials')) || [];
+
+    function renderTable() {
+        const tbody = document.querySelector('#materialsTable tbody');
+        tbody.innerHTML = '';
+        materials.forEach((mat, i) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${mat.name}</td>
+            <td>${mat.description}</td>
+            <td id="stock-${i}">${mat.stock}</td>
+            <td>${mat.unit}</td>
+            <td>${mat.status}</td>
+            <td>${mat.supplier}</td>
+            <td>
+            <button class="stock-btn" onclick="editStock(${i})">Ενημέρωση</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+        });
+    }
+
+    function editStock(idx) {
+        const cell = document.getElementById(`stock-${idx}`);
+        const old = materials[idx].stock;
+        cell.innerHTML = `
+            <div class="stock-edit-wrapper">
+                <input
+                type="number"
+                id="input-stock-${idx}"
+                class="stock-input"
+                value="${old}"
+                min="0"
+            >
+            <button
+                onclick="saveStock(${idx})"
+                class="save-stock-btn"
+                title="Αποθήκευση νέας τιμής"
+            >OK</button>
+        </div>
+  `;
+   }
+    function saveStock(idx) {
+        const input = document.getElementById(`input-stock-${idx}`);
+        const val = Number(input.value);
+        if (isNaN(val) || val < 0) return alert('Βάλε μη αρνητικό αριθμό');
+        if (val === 0) {
+        materials.splice(idx,1);
+        } else {
+        materials[idx].stock = val;
+        }
+        localStorage.setItem('materials', JSON.stringify(materials));
+        renderTable();
+    }
+
+    window.addEventListener('load', renderTable);
+  
+    </script>
   </body>
 </html>
