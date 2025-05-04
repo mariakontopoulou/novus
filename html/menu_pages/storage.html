@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>storage</title>
-    <link rel="stylesheet" href="/../../css/pages.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Storage</title>
+    <link rel="stylesheet" href="/../../css/pages.css" />
+    <link rel="stylesheet" href="/../../css/storage.css" />
     <link rel="stylesheet" href="/../../css/menu.css">
   </head>
 
@@ -12,6 +13,32 @@
     <div id="menu"></div>
     <div class="main-content">
       <h1>Αποθήκη</h1>
+      <input type="Text" placeholder="🔍 Αναζήτηση Υλικών" />
+      <button>Προσθήκη Υλικού </button>
+    </div>
+    <div class="Main-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Όνομα</th>
+            <th>Περιγραφή</th>
+            <th>Διαθέσιμο Απόθεμα</th>
+            <th>Μονάδα</th>
+            <th>Κατάσταση</th>
+            <th>Προμηθευτής</th>
+            <th>Ενέργειες</th>
+          </tr>
+          <tr>
+            <th>Αλουμίνιο</th>
+            <th>Αλουμίνιο</th>
+            <th>100</th>
+            <th>Κιλά</th>
+            <th>Ενεργό</th>
+            <th>Αλοίμονος</th>
+            <th><button>Ενημέρωση</button></th>
+          </tr>
+        </thead>
+      </table>
     </div>
 
     <script src="../../javascript/menu-loader.js"></script>
