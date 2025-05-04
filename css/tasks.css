@@ -1,82 +1,15 @@
 /* Base Reset & Fonts */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
   
   body {
     background-color: #f4f7fb;
     color: #333;
     font-size: 16px;
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 30px;
-    background-color: #007bff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    flex-wrap: nowrap;
-    border-radius: 12px;
-    margin: 16px;
-    color: white;
-  }
-  
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .navbar-menu-wrapper {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-  }
-  
-  .navbar-menu {
-    display: flex;
-    gap: 18px;
-    flex: 1;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .navbar-menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: clamp(16px, 1.3vw, 18px);
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.3s;
-  }
-  
-  .navbar-menu a:hover,
-  .navbar-menu a.active {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  
-  .profile-img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-    flex-shrink: 0;
   }
   
   .welcome-text {
@@ -101,50 +34,6 @@
   
   .logout-btn::before {
     content: "↩ ";
-  }
-  
-  /* Responsive Navbar */
-  @media (max-width: 1024px) {
-    .menu-toggle {
-      display: block;
-    }
-    .navbar-menu-wrapper {
-      display: none;
-      width: 100%;
-    }
-    .navbar-menu {
-      flex-direction: column;
-      background-color: #007bff;
-      padding: 10px 0;
-      gap: 10px;
-    }
-    .navbar-menu.show {
-      display: flex;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-    .navbar-menu {
-      justify-content: center;
-      width: 100%;
-    }
-    .navbar-right {
-      justify-content: flex-start;
-      width: 100%;
-      gap: 10px;
-    }
-  }
-  
-  /* Main Content & Layout */
-  .main-content {
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
   }
   
   /* Tasks Header */
@@ -200,7 +89,7 @@
   /* Tasks Grid & Cards */
   .tasks-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
     gap: 20px;
   }
   .task-card {

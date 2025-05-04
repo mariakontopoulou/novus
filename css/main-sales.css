@@ -1,4 +1,19 @@
 /* Βασική Στυλιζαρισμένη Έκδοση */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+body {
+  background-color: #f4f7fb;
+}
+
+.main-content {
+  padding: 30px;
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -19,7 +34,7 @@
   }
   
   .stat-value {
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: 600;
     color: #2c3e50;
     margin: 0.5rem 0 0;
@@ -29,10 +44,16 @@
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
-    margin: 2rem 0;
+    margin: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
   
+  .chart-container h3 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }  
+
   .recent-orders {
     background: white;
     padding: 1.5rem;
@@ -78,3 +99,28 @@
     background: #fff3cd;
     color: #856404;
   }
+
+  .dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .stats-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .chart-column {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .chart-container canvas {
+    max-height: 300px; /* για μικρότερο γράφημα */
+  }
+  

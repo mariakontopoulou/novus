@@ -15,29 +15,31 @@
   
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
-    </div>
 
         <!-- Στατιστικά Πωλήσεων -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Μηνιαίες Πωλήσεις</h3>
-            <p class="stat-value" id="monthly-sales">€0</p>
+        <div class="dashboard-grid">
+          <div class="stats-column">
+            <div class="stat-card">
+              <h3>Μηνιαίες Πωλήσεις</h3>
+              <p class="stat-value" id="monthly-sales">35.000 €</p>
+            </div>
+            <div class="stat-card">
+              <h3>Στόχος</h3>
+              <p class="stat-value" id="sales-target">50.000 €</p>
+            </div>
+            <div class="stat-card">
+              <h3>Πραγματοποίηση Στόχου</h3>
+              <p class="stat-value" id="target-progress">70 %</p>
+            </div>
           </div>
-          <div class="stat-card">
-            <h3>Στόχος</h3>
-            <p class="stat-value" id="sales-target">€0</p>
-          </div>
-          <div class="stat-card">
-            <h3>Πραγματοποίηση Στόχου</h3>
-            <p class="stat-value" id="target-progress">0%</p>
+          <div class="chart-column">
+            <div class="chart-container">
+              <h3>Πωλήσεις εξαμήνου</h3>
+              <canvas id="salesTrendChart"></canvas>
+            </div>
           </div>
         </div>
-  
-        <!-- Γράφημα Τάσεων -->
-        <div class="chart-container">
-          <canvas id="salesTrendChart"></canvas>
-        </div>
-  
+
         <!-- Πρόσφατες Συναλλαγές -->
         <div class="recent-orders">
           <h3>Πρόσφατες Παραγγελίες</h3>
@@ -51,14 +53,34 @@
                   <th>Κατάσταση</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody><tbody>
+                <tr>
+                  <td>#2345</td>
+                  <td>Πελάτης Γ.Π.</td>
+                  <td>€2.450</td>
+                  <td><span class="status-badge ολοκληρώθηκε">Ολοκληρώθηκε</span></td>
+                </tr>
+                <tr>
+                  <td>#2346</td>
+                  <td>Εταιρεία ΑΒΕ</td>
+                  <td>€850</td>
+                  <td><span class="status-badge εκκρεμεί">Εκκρεμεί</span></td>
+                </tr>
+                <tr>
+                  <td>#2347</td>
+                  <td>Μ.Κωνσταντινίδης</td>
+                  <td>€4.200</td>
+                  <td><span class="status-badge ολοκληρώθηκε">Ολοκληρώθηκε</span></td>
+                </tr>
+              </tbody>
+              </tbody>
             </table>
           </div>
         </div>
       </div>
+    </div>
 
     <script>
-    function loadUserData() { 
       const loggedUser = localStorage.getItem("loggedUser");
       fetch("../../json/user_info.json")
         .then(response => response.json())
@@ -74,61 +96,36 @@
           console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
           document.getElementById("fullname").textContent = "Χρήστης";
       });
-    }
-            // Φόρτωση δεδομένων πωλήσεων
-            const loadSalesData = () => {
-        fetch("../../json/main-sales.json")
-          .then(response => response.json())
-          .then(data => {
-            // Ενημέρωση στατιστικών
-            document.getElementById("monthly-sales").textContent = `€${data.monthlySales.toLocaleString()}`;
-            document.getElementById("sales-target").textContent = `€${data.target.toLocaleString()}`;
-            document.getElementById("target-progress").textContent = 
-              `${Math.round((data.monthlySales / data.target) * 100)}%`;
-
-            // Αρχικοποίηση γραφήματος
-            const ctx = document.getElementById('salesTrendChart').getContext('2d');
-            new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: data.chartLabels,
-                datasets: [{
-                  label: 'Ιστορικό Πωλήσεων',
-                  data: data.chartData,
-                  borderColor: '#007bff',
-                  fill: false,
-                  tension: 0.4
-                }]
-              },
-              options: {
-                responsive: true,
-                plugins: {
-                  legend: { position: 'bottom' }
-                }
-              }
-            });
-
-            // Συμπλήρωση πίνακα
-            const tbody = document.querySelector('#orders-table tbody');
-            tbody.innerHTML = data.recentOrders.map(order => `
-              <tr>
-                <td>#${order.id}</td>
-                <td>${order.customer}</td>
-                <td>€${order.amount.toLocaleString()}</td>
-                <td><span class="status-badge ${order.status.toLowerCase()}">${order.status}</span></td>
-              </tr>
-            `).join('');
-          })
-          .catch(console.error);
-      };
-
-      // Αρχικοποίηση σελίδας
-      document.addEventListener('DOMContentLoaded', () => {
-        loadUserData();
-        loadSalesData();
-      });
     </script>
-    
+
+  <script>
+    const ctx = document.getElementById('salesTrendChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μαι', 'Ιουν'],
+        datasets: [{
+          label: 'Ιστορικό Πωλήσεων',
+          data: [22000, 27000, 30000, 24000, 34000, 20000],
+          borderColor: '#007bff',
+          fill: false,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
     <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>
   </body>

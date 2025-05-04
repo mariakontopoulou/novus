@@ -13,7 +13,7 @@
 
   <div class="main-content">
     <div class="heading-row">
-      <h1>Εργασίες</h1>
+      <h2>Εργασίες</h2>
       <button class="btn-new-task">+ Νέα Εργασία</button>
     </div>
     <div class="search-bar">
@@ -90,13 +90,31 @@
           <button class="btn-details">Λεπτομέρειες</button>
         </div>
       </article>
+
+      <!-- Κάρτα 4 -->
+      <article class="task-card">
+        <div class="task-card-header">
+          <div>
+            <h2>Επισκευή πανιών</h2>
+            <small class="order-info">Παραγγελία: #3 – Προϊόν #52</small>
+          </div>
+          <span class="badge badge-completed">Ολοκληρώθηκε</span>
+        </div>
+        <div class="task-card-body">
+          <p class="due-date">Προθεσμία: <time datetime="2023-05-18">10/05/2023</time></p>
+          <ul class="task-steps">
+            <li class="completed"><input type="checkbox" checked /> Μπάλωμα ατελειών</li>
+            <li class="completed"><input type="checkbox" checked /> Έλεγχος αντοχής</li>
+            <li class="completed"><input type="checkbox" checked /> Συσκευασία</li>
+          </ul>
+        </div>
+        <div class="task-card-footer">
+          <small class="last-updated">17/04/2023</small>
+          <button class="btn-details">Λεπτομέρειες</button>
+        </div>
+      </article>
     </section>
   </div>
-
-  <div class="progress-container">
-    <div id="modal-progress" class="progress-bar" style="width: 0%"></div>
-  </div>
-  <span id="modal-percent">0%</span>
 
 
 <!-- Modal overlay -->
