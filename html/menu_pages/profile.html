@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Το προφίλ μου</title>
     <link rel="stylesheet" href="/../../css/pages.css">
     <link rel="stylesheet" href="/../../css/profile.css">
@@ -50,10 +50,6 @@
       </div>
     </div>
 
-    <script src="../../javascript/menu-loader.js"></script>
-
-    <script src="../../javascript/navigations.js"></script>
-
     <script>
       const loggedUser = localStorage.getItem("loggedUser");
       fetch("../../json/user_info.json")
@@ -78,5 +74,8 @@
           document.getElementById("fullname").textContent = "Χρήστης";
       });
     </script>
+
+    <script src="../../javascript/menu-loader.js"></script>
+    <script src="../../javascript/navigations.js"></script>
   </body>
 </html>

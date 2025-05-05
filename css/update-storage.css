@@ -64,3 +64,62 @@ input {
 .submit-btn:active {
     transform: scale(0.95);
 }
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.step-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.step-item input {
+    flex: 1;
+}
+
+.remove-step {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.remove-step:hover {
+    background-color: #c82333;
+}
+
+#add-step {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-step:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

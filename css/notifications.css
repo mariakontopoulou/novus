@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+}
+
+h2 {
+  padding: 20px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 0 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.active {
+  background-color: #0056b3;
+}
+
+.notification-container {
+  max-width: 800px;
+  margin: 0 ;
+}
+
+.notification-list {
+  display: none;
+}
+
+.notification-list.active {
+  display: block;
+}
+
+.notification {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.notification strong {
+  font-size: 18px;
+  margin: 10px;
+  color: #2a2a2a;
+}
+
+.notification p {
+  font-size: 16px;
+  margin: 10px;
+  color: #555;
+}
+
+button.mark-read-btn {
+  background-color: #f0f0f0;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  margin: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+button.mark-read-btn:hover {
+  background-color: #e0e0e0;
+}
+
+button.mark-read-btn:focus {
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-send {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-send:hover {
+  background-color: #0056b3;
+}
+
+.success-msg {
+  margin-top: 20px;
+  padding: 12px;
+  background: #e6ffe6;
+  color: #2e7d32;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  display: none;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ειδοποιήσεις</title>
+  <link rel="stylesheet" href="/../../css/notifications.css">
+  <link rel="stylesheet" href="/../../css/menu.css">
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <h2>Οι ειδοποιήσεις μου</h2>
+      
+    <div class="main-content">
+      <div class="buttons">
+        <button id="new-notifications-btn" class="active">Νέες Ειδοποιήσεις</button>
+        <button id="read-notifications-btn">Αναγνωσμένες Ειδοποιήσεις</button>
+      </div>
+      
+      <div class="notification-container">
+        <div id="new-notifications" class="notification-list active">
+          <div class="notification" data-id="1">
+            <strong>Υπενθύμιση: Πληρωμή προμηθευτή</strong>
+            <p>Η πληρωμή του προμηθευτή “Ήλιος Α.Ε.” ύψους 5.200€ λήγει στις 07/05/2025.</p>
+            <button class="mark-read-btn">Επισήμανση ως Αναγνωσμένο</button>
+          </div>
+          <div class="notification" data-id="2">
+            <strong>Νέα παραγγελία από το Τμήμα Πωλήσεων</strong>
+            <p>Έλαβε νέα παραγγελία για 150 επαγγελματικές ομπρέλες τύπου "XL-Βιομηχανία". Απαιτείται τιμολόγηση.</p>
+            <button class="mark-read-btn">Επισήμανση ως Αναγνωσμένο</button>
+          </div>
+          <div class="notification" data-id="3">
+            <strong>Ολοκλήρωση καταχώρισης τιμολογίων</strong>
+            <p>Καταχωρήθηκαν 8 νέα τιμολόγια στο ERP. Παρακαλώ για έλεγχο και επιβεβαίωση.</p>
+            <button class="mark-read-btn">Επισήμανση ως Αναγνωσμένο</button>
+          </div>
+        </div>
+    
+        <div id="read-notifications" class="notification-list">
+          <div class="notification" data-id="4">
+            <strong>Ειδοποίηση για ΦΠΑ Απριλίου</strong>
+            <p>Η δήλωση ΦΠΑ Απριλίου υποβλήθηκε επιτυχώς στην ΑΑΔΕ.</p>
+          </div>
+          <div class="notification" data-id="5">
+            <strong>Επικοινωνία με εξωτερικό λογιστή</strong>
+            <p>Ο εξωτερικός λογιστής απέστειλε τις διορθώσεις στα ισοζύγια Μαρτίου.</p>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <script>document.addEventListener('DOMContentLoaded', () => {
+      const newNotificationsBtn = document.getElementById('new-notifications-btn');
+      const readNotificationsBtn = document.getElementById('read-notifications-btn');
+      const newNotificationsList = document.getElementById('new-notifications');
+      const readNotificationsList = document.getElementById('read-notifications');
+    
+      function switchList(activeList, inactiveList, activeButton, inactiveButton) {
+        activeList.classList.add('active');
+        inactiveList.classList.remove('active');
+        activeButton.classList.add('active');
+        inactiveButton.classList.remove('active');
+      }
+    
+      newNotificationsList.addEventListener('click', (event) => {
+        if (event.target.classList.contains('mark-read-btn')) {
+          const notificationElement = event.target.closest('.notification');
+          const notificationId = notificationElement.getAttribute('data-id');
+    
+          readNotificationsList.appendChild(notificationElement);
+          notificationElement.querySelector('.mark-read-btn').remove();
+    
+          if (!newNotificationsList.querySelector('.notification')) {
+            switchList(readNotificationsList, newNotificationsList, readNotificationsBtn, newNotificationsBtn);
+          }
+        }
+      });
+    
+      newNotificationsBtn.addEventListener('click', () => {
+        switchList(newNotificationsList, readNotificationsList, newNotificationsBtn, readNotificationsBtn);
+      });
+    
+      readNotificationsBtn.addEventListener('click', () => {
+        switchList(readNotificationsList, newNotificationsList, readNotificationsBtn, newNotificationsBtn);
+      });
+    
+      switchList(newNotificationsList, readNotificationsList, newNotificationsBtn, readNotificationsBtn);
+      });  
+  </script>
+  
+  <script src="../../javascript/menu-loader.js"></script>
+  <script src="../../javascript/navigations.js"></script>
+</body>
+</html>

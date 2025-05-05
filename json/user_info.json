@@ -33,5 +33,12 @@
     "email": "nickkarag13@gmail.com",
     "role": "Υπάλληλος Εργοστασίου",
     "pic": "/png/pic5.png"
+  },
+  {
+    "username": "papadopoulos",
+    "fullname": "Γιώργος Παπαδόπουλος",
+    "email": "gpapad@gmail.com",
+    "role": "Υπάλληλος Εργοστασίου",
+    "pic": "/png/prp.png"
   }
 ]

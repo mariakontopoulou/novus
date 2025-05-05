@@ -41,14 +41,14 @@ header {
     text-align: center;
     background: linear-gradient(135deg, #007bff22, #ffffff00);
     margin-bottom: 30px;
-  }
+}
   
-  header h2 {
+header h2 {
     color: #007bff;
     font-size: 26px;
     margin-bottom: 5px;
     letter-spacing: -0.5px;
-  }
+}
 
 .box {
     background-color: #ffffff;
@@ -59,6 +59,10 @@ header {
     position: relative;
     overflow: hidden;
 }
+
+.box.big {
+    grid-column: span 2;
+}  
   
 .box:hover {
     transform: translateY(-4px);

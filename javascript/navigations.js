@@ -112,6 +112,34 @@ function goToReports() {
   }
 }
 
+function goToNotifications() {
+  const user = localStorage.getItem("role");
+
+  if (user === "ceo") {
+    window.location.href = "../menu_pages/send-notification.html";
+  } else if (user === "cfo") {
+    window.location.href = "../menu_pages/notifications-cfo.html";
+  } else if (user === "p&o") {
+    window.location.href = "../menu_pages/send-notification.html";
+  } else if (user === "sales") {
+    window.location.href = "../menu_pages/send-notification.html";
+  } else if (user === "worker") {
+    window.location.href = "../menu_pages/notifications-worker.html";
+  } else {
+    alert("Προέκυψε πρόβλημα. Συνδεθείτε ξανά.");
+    window.location.href = "../login_pages/login.html";
+  }
+}
+
+function goToNewTask() {
+  const user = localStorage.getItem("role");
+
+  if (user === "ceo") {
+    window.location.href = "../menu_pages/new-task.html";
+  } else if (user === "p&o") {
+    window.location.href = "../menu_pages/new-task.html";
+  }
+}
 function toggleMenu() {
   const menu = document.getElementById("mainMenu");
   menu.classList.toggle("show");

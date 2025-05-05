@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Αποστολή Ειδοποίησης</title>
+  <link rel="stylesheet" href="/../../css/notifications.css">
+  <link rel="stylesheet" href="/../../css/menu.css">
+</head>
+<body>
+  <div id="menu"></div>
+
+  <div class="main-content">
+    <h2>Αποστολή Ειδοποίησης</h2>
+
+    <form id="notification-form">
+      <div class="form-group">
+        <label for="recipient">Παραλήπτης</label>
+        <select id="recipient" required>
+          <option value="">-- Επιλέξτε Χρήστη --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="title">Τίτλος</label>
+        <input type="text" id="title" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Μήνυμα</label>
+        <textarea id="message" required></textarea>
+      </div>
+      <button type="submit" class="btn-send">Αποστολή</button>
+      <div class="success-msg" id="success-message">Η ειδοποίηση στάλθηκε με επιτυχία!</div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const recipientSelect = document.getElementById("recipient");
+
+      fetch("../../json/user_info.json")
+        .then(response => response.json())
+        .then(users => {
+          const filtered = users.filter(u => 
+            u.role.toLowerCase() === "υπεύθυνος λογιστηρίου" || 
+            u.role.toLowerCase() === "υπάλληλος εργοστασίου"
+          );
+
+          filtered.forEach(user => {
+            const option = document.createElement("option");
+            option.value = user.username;
+            option.textContent = `${user.fullname} (${user.role})`;
+            recipientSelect.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error("Σφάλμα κατά τη φόρτωση των χρηστών:", error);
+        });
+
+        document.getElementById("notification-form").addEventListener("submit", e => {
+          e.preventDefault();
+          document.getElementById("success-message").style.display = "block";
+
+          setTimeout(() => {
+            document.getElementById("notification-form").reset();
+            document.getElementById("success-message").style.display = "none";
+          }, 3000);
+        });
+      });
+    </script>
+
+    <script src="../../javascript/menu-loader.js"></script>
+    <script src="../../javascript/navigations.js"></script>
+</body>
+</html>

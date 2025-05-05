@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main-page-worker</title>
+    <title>Αρχική</title>
     <link rel="stylesheet" href="/../../css/main-worker.css">
     <link rel="stylesheet" href="/../../css/menu.css">
   </head>
@@ -13,6 +13,7 @@
   
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
+
       <header>
         <h2>Πίνακας ελέγχου - ISKIOS</h2>
       </header>
@@ -34,25 +35,24 @@
               </div>
           </div>
       </div>
-        <div class="section" id="admin-comments">
-          <h2>Σχόλια από το Διοικητικό Τμήμα</h2>
-          <ul>
-            <li><strong>Σχόλιο 1:</strong> Προτεραιότητα στις παραγγελίες του πελάτη X.</li>
-            <hr>
-            <li><strong>Σχόλιο 2:</strong> Ενημέρωση για το νέο σχέδιο παραγωγής που ξεκινά την επόμενη εβδομάδα.</li>
-          </ul>
-        </div>
-      
-        <div class="section" id="employee-recognition">
-          <h2>Αναγνώριση Εργαζομένων</h2>
-          <ul>
-            <li><strong>Μαρία Παπαδοπούλου:</strong> Βοήθησε στην ολοκλήρωση των παραγγελιών για το πελάτη Y.</li>
-            <hr>
-            <li><strong>Γιώργος Κωνσταντίνου:</strong> Πρώτος στην παραγωγική απόδοση για την εβδομάδα.</li>
-          </ul>
-        </div>
+      <div class="section" id="admin-comments">
+        <h2>Σχόλια από το Διοικητικό Τμήμα</h2>
+        <ul>
+          <li><strong>Σχόλιο 1:</strong> Προτεραιότητα στις παραγγελίες του πελάτη X.</li>
+          <hr>
+          <li><strong>Σχόλιο 2:</strong> Ενημέρωση για το νέο σχέδιο παραγωγής που ξεκινά την επόμενη εβδομάδα.</li>
+        </ul>
       </div>
-      
+    
+      <div class="section" id="employee-recognition">
+        <h2>Αναγνώριση Εργαζομένων</h2>
+        <ul>
+          <li><strong>Μαρία Παπαδοπούλου:</strong> Βοήθησε στην ολοκλήρωση των παραγγελιών για το πελάτη Y.</li>
+          <hr>
+          <li><strong>Γιώργος Κωνσταντίνου:</strong> Πρώτος στην παραγωγική απόδοση για την εβδομάδα.</li>
+        </ul>
+      </div>
+    </div>
 
     <script>
       const loggedUser = localStorage.getItem("loggedUser");
@@ -73,7 +73,6 @@
     </script>
     
     <script src="../../javascript/menu-loader.js"></script>
-
     <script src="../../javascript/navigations.js"></script>
   </body>
 </html>

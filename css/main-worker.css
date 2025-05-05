@@ -13,6 +13,7 @@ body {
 .main-content {
     padding: 30px;
 }
+
 header {
     grid-column: 1 / -1;
     padding: 20px;
@@ -20,14 +21,15 @@ header {
     text-align: center;
     background: linear-gradient(135deg, #007bff22, #ffffff00);
     margin-bottom: 30px;
-  }
+}
   
-  header h2 {
+header h2 {
     color: #007bff;
     font-size: 26px;
     margin-bottom: 5px;
     letter-spacing: -0.5px;
-  }
+}
+
 .container {
     padding: 30px;
     border-radius: 12px;
@@ -114,17 +116,16 @@ hr {
     background: #686868c3;
     margin: 10px 0;
     border-radius: 40%;
-  }
+}
 
-  .side-by-side {
+.side-by-side {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
+}
   
-  .side-by-side .section {
+.side-by-side .section {
     flex: 1;
     min-width: 300px;
-  }
-  
+}

@@ -8,6 +8,7 @@
 body {
   background-color: #f4f7fb;
 }
+
 header {
   grid-column: 1 / -1;
   padding: 20px;
@@ -23,6 +24,7 @@ header h2 {
   margin-bottom: 5px;
   letter-spacing: -0.5px;
 }
+
 .welcome-text {
   font-size: clamp(14px, 1.1vw, 16px);
   color: #f4f4f4;
@@ -51,26 +53,6 @@ header h2 {
   padding: 30px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    flex-wrap: nowrap;
-  }
-  
-  .navbar-menu {
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .navbar-right {
-    justify-content: flex-start;
-    width: 100%;
-    gap: 10px;
-  }
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -85,28 +67,6 @@ header h2 {
   flex: 1;
   justify-content: center;
 }
-
-@media (max-width: 1024px) {
-  .menu-toggle {
-    display: block;
-  }
-  
-  .navbar-menu-wrapper {
-    display: none;
-    width: 100%;
-  }
- 
-  .navbar-menu {
-    flex-direction: column;
-    background-color: #007bff;
-    padding: 10px 0;
-    gap: 10px;
-  }
-  
-  .navbar-menu.show {
-    display: flex;
-  }
-}    
 
 .users-container {
   max-width: 100px;
@@ -314,7 +274,6 @@ header h2 {
   background-color: #0056b3;
 }
 
-
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -348,13 +307,13 @@ header h2 {
 }
 
 .confirmation-banner {
-  display: none; /* Κρυφό αρχικά */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Μισοδιάφανο μαύρο φόντο */
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -390,6 +349,6 @@ header h2 {
 hr {
   border: 0;
   height: 1.5px;
-  background-color: #7d787869; /* Μπορείς να αλλάξεις το χρώμα */
-  margin: 20px 0; /* Κενό πάνω και κάτω από τη γραμμή */
+  background-color: #7d787869;
+  margin: 20px 0;
 }

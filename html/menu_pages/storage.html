@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Storage</title>
-    <link rel="stylesheet" href="/../../css/pages.css" />
-    <link rel="stylesheet" href="/../../css/storage.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αποθήκη</title>
+    <link rel="stylesheet" href="/../../css/pages.css">
+    <link rel="stylesheet" href="/../../css/storage.css">
     <link rel="stylesheet" href="/../../css/menu.css">
   </head>
 
@@ -15,7 +15,7 @@
     <div class="main-content">
       <div class="header-row">
         <h2>Αποθήκη</h2>
-        <button onclick="window.location.href='update-storage.html'">Προσθήκη Υλικού +</button>
+        <button onclick="window.location.href='update-storage.html'">+ Προσθήκη Υλικού</button>
       </div>
       <div class="search-bar">
         <input type="Text" placeholder="Αναζήτηση Πρώτων Υλών"></div>
@@ -54,8 +54,6 @@
       </div>
     </div>
 
-    <script src="../../javascript/menu-loader.js"></script>
-    <script src="../../javascript/navigations.js"></script>
     <script>
       window.addEventListener('load', () => {
       const materials = JSON.parse(localStorage.getItem('materials')) || [];
@@ -75,6 +73,7 @@
       });
     });
     </script>
+
     <script>
         let materials = JSON.parse(localStorage.getItem('materials')) || [];
 
@@ -96,37 +95,40 @@
             });
         }    
 
-    function editStock(idx) {
-        const cell = document.getElementById(`stock-${idx}`);
-        const old = materials[idx].stock;
-        cell.innerHTML = `
-            <div class="stock-edit-wrapper">
-                <input
-                    type="number"
-                    id="input-stock-${idx}"
-                    class="stock-input"
-                    value="${old}"
-                    min="0"
-                />
-            <button onclick="saveStock(${idx})" class="save-stock-btn" title="Αποθήκευση νέας τιμής">OK</button>
-        </div>
-  `;
-   }
-    function saveStock(idx) {
-        const input = document.getElementById(`input-stock-${idx}`);
-        const val = Number(input.value);
-        if (isNaN(val) || val < 0) return alert('Βάλε μη αρνητικό αριθμό');
-        if (val === 0) {
-        materials.splice(idx,1);
-        } else {
-        materials[idx].stock = val;
-        }
-        localStorage.setItem('materials', JSON.stringify(materials));
-        renderTable();
-    }
+        function editStock(idx) {
+            const cell = document.getElementById(`stock-${idx}`);
+            const old = materials[idx].stock;
+            cell.innerHTML = `
+                <div class="stock-edit-wrapper">
+                    <input
+                        type="number"
+                        id="input-stock-${idx}"
+                        class="stock-input"
+                        value="${old}"
+                        min="0"
+                  >
+                <button onclick="saveStock(${idx})" class="save-stock-btn" title="Αποθήκευση νέας τιμής">OK</button>
+            </div>
+      `;
+      }
 
-    window.addEventListener('load', renderTable);
-  
+      function saveStock(idx) {
+          const input = document.getElementById(`input-stock-${idx}`);
+          const val = Number(input.value);
+          if (isNaN(val) || val < 0) return alert('Βάλε μη αρνητικό αριθμό');
+          if (val === 0) {
+          materials.splice(idx,1);
+          } else {
+          materials[idx].stock = val;
+          }
+          localStorage.setItem('materials', JSON.stringify(materials));
+          renderTable();
+      }
+
+      window.addEventListener('load', renderTable);
     </script>
+
+    <script src="../../javascript/menu-loader.js"></script>
+    <script src="../../javascript/navigations.js"></script>
   </body>
 </html>

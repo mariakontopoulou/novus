@@ -12,6 +12,7 @@ body {
 .main-content {
   padding: 30px;
 }
+
 header {
   grid-column: 1 / -1;
   padding: 20px;
@@ -27,113 +28,113 @@ header h2 {
   margin-bottom: 5px;
   letter-spacing: -0.5px;
 }
+
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
   
-  .stat-card {
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-  }
+.stat-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
   
-  .stat-card:hover {
-    transform: translateY(-3px);
-  }
+.stat-card:hover {
+  transform: translateY(-3px);
+}
   
-  .stat-value {
-    font-size: 30px;
-    font-weight: 600;
-    color: #2c3e50;
-    margin: 0.5rem 0 0;
-  }
+.stat-value {
+  font-size: 30px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0.5rem 0 0;
+}
   
-  .chart-container {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
   
-  .chart-container h3 {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }  
+.chart-container h3 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}  
 
-  .recent-orders {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
+.recent-orders {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
   
-  .table-wrapper {
-    overflow-x: auto;
-  }
+.table-wrapper {
+  overflow-x: auto;
+}
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
   
-  th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ecf0f1;
-  }
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
   
-  th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-  }
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+ 
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
   
-  .status-badge {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
+.status-badge.ολοκληρώθηκε {
+  background: #d4edda;
+  color: #155724;
+}
   
-  .status-badge.ολοκληρώθηκε {
-    background: #d4edda;
-    color: #155724;
-  }
-  
-  .status-badge.εκκρεμεί {
-    background: #fff3cd;
-    color: #856404;
-  }
+.status-badge.εκκρεμεί {
+  background: #fff3cd;
+  color: #856404;
+}
 
-  .dashboard-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-  }
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
   
-  .stats-column {
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.stats-column {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
   
-  .chart-column {
-    flex: 2;
-    min-width: 300px;
-  }
+.chart-column {
+  flex: 2;
+  min-width: 300px;
+}
   
-  .chart-container canvas {
-    max-height: 300px; /* για μικρότερο γράφημα */
-  }
-  
+.chart-container canvas {
+  max-height: 300px;
+}

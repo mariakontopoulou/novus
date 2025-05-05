@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="el">
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Νέα Παραγγελία</title>
     <link rel="stylesheet" href="/../../css/neworder.css">
@@ -17,19 +17,19 @@
           <h2>Στοιχεία πελάτη</h2>
           <div class="form-group">
             <p>Ονοματεπώνυμο</p>
-            <input type="text" id="customer" name="customer" required />
+            <input type="text" id="customer" name="customer" required>
           </div>  
           <div class="form-group">
             <p>Τηλέφωνο</p>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
           </div>        
           <div class="form-group">
             <p>Email</p>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required>
           </div>  
           <div class="form-group">
             <p>Επιθυμητή Ημερομηνία Παράδοσης</p>
-            <input type="date" id="deliveryDate" name="deliveryDate" required />
+            <input type="date" id="deliveryDate" name="deliveryDate" required>
           </div>
           <div class="form-group">
             <p>Μέθοδος πληρωμής</p>
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="column">
-          <h2>Στοιχέια προϊόντος</h2>
+          <h2>Στοιχεία προϊόντος</h2>
           <div class="form-group">
             <p>Επιλογή</p>
             <select id="selection" name="selection" required>
@@ -74,15 +74,15 @@
             </div>          
             <div class="form-group">
               <p>Μέγεθος</p>
-              <input type="text" id="size" name="size" placeholder="π.χ. 3x3" required />
+              <input type="text" id="size" name="size" placeholder="π.χ. 3x3" required>
             </div>          
             <div class="form-group">
               <p>Χρώμα πανιού (κωδικός)</p>
-              <input type="text" id="fabricColor" name="fabricColor" required />
+              <input type="text" id="fabricColor" name="fabricColor" required>
             </div>          
             <div class="form-group">
               <p>Χρώμα σκελετού</p>
-              <input type="text" id="frameColor" name="frameColor" required />
+              <input type="text" id="frameColor" name="frameColor" required>
             </div>          
             <div class="form-group">
               <p>Βάση</p>
@@ -97,11 +97,11 @@
             </div>          
             <div class="form-group">
               <p>Τιμή μονάδας (€)</p>
-              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
+              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required>
             </div>          
             <div class="form-group">
               <p>Ποσότητα</p>
-              <input type="number" id="quantity" name="quantity" min="1" required />
+              <input type="number" id="quantity" name="quantity" min="1" required>
             </div>          
             <div class="form-group">
               <p>Ειδικές απαιτήσεις | Παρατηρήσεις</p>
@@ -124,11 +124,11 @@
             </div>
             <div class="form-group">
               <p>Εκτιμώμενη τιμή (€)</p>
-              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
+              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required>
             </div> 
             <div class="form-group">
               <p>Ποσότητα</p>
-              <input type="number" id="quantity" name="quantity" min="1" required />
+              <input type="number" id="quantity" name="quantity" min="1" required>
             </div>
           </div>          
           <div id="addonsFields" style="display: none;">
@@ -138,11 +138,11 @@
             </div>
             <div class="form-group">
               <p>Τιμή μονάδας (€)</p>
-              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required />
+              <input type="number" id="unitPrice" name="unitPrice" min="0" step="0.01" required>
             </div> 
             <div class="form-group">
               <p>Ποσότητα</p>
-              <input type="number" id="quantity" name="quantity" min="1" required />
+              <input type="number" id="quantity" name="quantity" min="1" required>
             </div>
           </div>          
         </div>
@@ -179,43 +179,39 @@
       });
     </script>
 
-<script>
-  document.querySelector("a.submit-btn").addEventListener("click", function (e) {
-    // Συλλογή δεδομένων πελάτη
-    const customer = document.getElementById("customer").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const deliveryDate = document.getElementById("deliveryDate").value;
-    const payment = document.getElementById("payment").value;
-    const notes = document.getElementById("notes").value;
+    <script>
+      document.querySelector("a.submit-btn").addEventListener("click", function (e) {
+        const customer = document.getElementById("customer").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const deliveryDate = document.getElementById("deliveryDate").value;
+        const payment = document.getElementById("payment").value;
+        const notes = document.getElementById("notes").value;
 
-    // Στοιχεία προϊόντος (απλοποιημένα - μπορείς να βάλεις περισσότερα)
-    const selection = document.getElementById("selection").value;
-    const unitPrice = document.getElementById("unitPrice")?.value || null;
-    const quantity = document.getElementById("quantity")?.value || null;
+        const selection = document.getElementById("selection").value;
+        const unitPrice = document.getElementById("unitPrice")?.value || null;
+        const quantity = document.getElementById("quantity")?.value || null;
 
-    // Δημιουργία αντικειμένου παραγγελίας
-    const newOrder = {
-      id: "OR" + Math.floor(Math.random() * 100000), // τυχαίος αριθμός
-      customer,
-      phone,
-      email,
-      deliveryDate,
-      payment,
-      notes,
-      selection,
-      unitPrice,
-      quantity,
-      dateCreated: new Date().toISOString().split("T")[0],
-      status: "Εκκρεμεί"
-    };
+        const newOrder = {
+          id: "OR" + Math.floor(Math.random() * 100000),
+          customer,
+          phone,
+          email,
+          deliveryDate,
+          payment,
+          notes,
+          selection,
+          unitPrice,
+          quantity,
+          dateCreated: new Date().toISOString().split("T")[0],
+          status: "Εκκρεμεί"
+        };
 
-    // Ανάκτηση & αποθήκευση
-    const orders = JSON.parse(localStorage.getItem("orders")) || [];
-    orders.push(newOrder);
-    localStorage.setItem("orders", JSON.stringify(orders));
-  });
-</script>
+        const orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(newOrder);
+        localStorage.setItem("orders", JSON.stringify(orders));
+      });
+    </script>
 
     <script>
       document.getElementById("addProductBtn").addEventListener("click", () => {

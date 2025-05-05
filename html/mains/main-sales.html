@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main-page-ceo</title>
+    <title>Αρχική</title>
     <link rel="stylesheet" href="/../../css/pages.css">
     <link rel="stylesheet" href="/../../css/menu.css">
     <link rel="stylesheet" href="/../../css/main-sales.css">
@@ -15,10 +15,10 @@
   
     <div class="main-content">
       <h2>Καλωσήρθατε, <span id="fullname"></span>!</h2>
+
       <header>
         <h2>Πίνακας ελέγχου - ISKIOS</h2>
       </header>
-        <!-- Στατιστικά Πωλήσεων -->
         <div class="dashboard-grid">
           <div class="stats-column">
             <div class="stat-card">
@@ -41,8 +41,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Πρόσφατες Συναλλαγές -->
         <div class="recent-orders">
           <h3>Πρόσφατες Παραγγελίες</h3>
           <div class="table-wrapper">
@@ -100,33 +98,33 @@
       });
     </script>
 
-  <script>
-    const ctx = document.getElementById('salesTrendChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μαι', 'Ιουν'],
-        datasets: [{
-          label: 'Ιστορικό Πωλήσεων',
-          data: [22000, 27000, 30000, 24000, 34000, 20000],
-          borderColor: '#007bff',
-          fill: false,
-          tension: 0.4
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: 'bottom' }
+    <script>
+      const ctx = document.getElementById('salesTrendChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μαι', 'Ιουν'],
+          datasets: [{
+            label: 'Ιστορικό Πωλήσεων',
+            data: [22000, 27000, 30000, 24000, 34000, 20000],
+            borderColor: '#007bff',
+            fill: false,
+            tension: 0.4
+          }]
         },
-        scales: {
-          y: {
-            beginAtZero: true
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'bottom' }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
           }
         }
-      }
-    });
-  </script>
+      });
+    </script>
 
     <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>

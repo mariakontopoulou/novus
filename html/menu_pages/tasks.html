@@ -1,179 +1,155 @@
 <!DOCTYPE html>
-<html lang="el">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Εργασίες</title>
-  <link rel="stylesheet" href="/../../css/pages.css">
-  <link rel="stylesheet" href="/../../css/menu.css">
-  <link rel="stylesheet" href="../../css/tasks.css">
-</head>
-<body>
-  <div id="menu"></div>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εργασίες</title>
+    <link rel="stylesheet" href="/../../css/pages.css">
+    <link rel="stylesheet" href="/../../css/menu.css">
+    <link rel="stylesheet" href="../../css/tasks.css">
+  </head>
 
-  <div class="main-content">
-    <div class="heading-row">
-      <h2>Εργασίες</h2>
-      <button class="btn-new-task">+ Νέα Εργασία</button>
+  <body>
+    <div id="menu"></div>
+
+    <div class="main-content">
+      <div class="heading-row">
+        <h2>Εργασίες</h2>
+
+        <button class="btn-new-task" onclick="goToNewTask()">+ Νέα Εργασία</button>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Αναζήτηση εργασιών...">
+      </div>
+      <section class="tasks-list">
+        <article class="task-card">
+          <div class="task-card-header">
+            <div>
+              <h2>Κατασκευή σκελετών ομπρελών</h2>
+              <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
+            </div>
+            <span class="badge badge-in-progress">Σε εξέλιξη</span>
+          </div>
+          <div class="task-card-body">
+            <p class="due-date">Προθεσμία: <time datetime="2023-05-09">09/05/2023</time></p>
+            <ul class="task-steps">
+              <li class="completed"><input type="checkbox" checked> Κοπή μεταλλικών μερών</li>
+              <li><input type="checkbox"> Συναρμολόγηση σκελετού</li>
+              <li><input type="checkbox"> Έλεγχος ποιότητας</li>
+            </ul>
+          </div>
+          <div class="task-card-footer">
+            <small class="last-updated">15/04/2023</small>
+            <button class="btn-details">Λεπτομέρειες</button>
+          </div>
+        </article>
+        <article class="task-card">
+          <div class="task-card-header">
+            <div>
+              <h2>Ραφή υφασμάτων για ομπρέλες</h2>
+              <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
+            </div>
+            <span class="badge badge-pending">Εκκρεμεί</span>
+          </div>
+          <div class="task-card-body">
+            <p class="due-date">Προθεσμία: <time datetime="2023-05-15">15/05/2023</time></p>
+            <ul class="task-steps">
+              <li><input type="checkbox"> Κοπή υφάσματος</li>
+              <li><input type="checkbox"> Ραφή περιμετρικά</li>
+              <li><input type="checkbox"> Προσθήκη λογοτύπου</li>
+            </ul>
+          </div>
+          <div class="task-card-footer">
+            <small class="last-updated">–</small>
+            <button class="btn-details">Λεπτομέρειες</button>
+          </div>
+        </article>
+        <article class="task-card">
+          <div class="task-card-header">
+            <div>
+              <h2>Συσκευασία τελικών προϊόντων</h2>
+              <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
+            </div>
+            <span class="badge badge-completed">Ολοκληρώθηκε</span>
+          </div>
+          <div class="task-card-body">
+            <p class="due-date">Προθεσμία: <time datetime="2023-05-18">18/05/2023</time></p>
+            <ul class="task-steps">
+              <li class="completed"><input type="checkbox" checked> Έλεγχος ποιότητας</li>
+              <li class="completed"><input type="checkbox" checked> Τοποθέτηση σε συσκευασία</li>
+              <li class="completed"><input type="checkbox" checked> Σήμανση και αποθήκευση</li>
+            </ul>
+          </div>
+          <div class="task-card-footer">
+            <small class="last-updated">17/04/2023</small>
+            <button class="btn-details">Λεπτομέρειες</button>
+          </div>
+        </article>
+        <article class="task-card">
+          <div class="task-card-header">
+            <div>
+              <h2>Επισκευή πανιών</h2>
+              <small class="order-info">Παραγγελία: #3 – Προϊόν #52</small>
+            </div>
+            <span class="badge badge-completed">Ολοκληρώθηκε</span>
+          </div>
+          <div class="task-card-body">
+            <p class="due-date">Προθεσμία: <time datetime="2023-05-18">10/05/2023</time></p>
+            <ul class="task-steps">
+              <li class="completed"><input type="checkbox" checked> Μπάλωμα ατελειών</li>
+              <li class="completed"><input type="checkbox" checked> Έλεγχος αντοχής</li>
+              <li class="completed"><input type="checkbox" checked> Συσκευασία</li>
+            </ul>
+          </div>
+          <div class="task-card-footer">
+            <small class="last-updated">17/04/2023</small>
+            <button class="btn-details">Λεπτομέρειες</button>
+          </div>
+        </article>
+      </section>
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Αναζήτηση εργασιών..." />
-    </div>
-
-    <section class="tasks-list">
-      
-      <!-- Κάρτα 1 -->
-      <article class="task-card">
-        <div class="task-card-header">
-          <div>
-            <h2>Κατασκευή σκελετών ομπρελών</h2>
-            <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
+    <div id="task-modal-overlay" class="modal-overlay hidden">
+      <div class="modal">
+        <button id="modal-close" class="modal-close">×</button>
+        <div id="modal-content">
+          <h3 id="modal-title"></h3>
+          <p class="modal-order" id="modal-order"></p>
+          <p class="modal-dates">
+            Προθεσμία: <span id="modal-due"></span> |
+            Τελευταία ενημέρωση: <span id="modal-updated"></span>
+          </p>
+          <div class="modal-steps">
+            <h4>Βήματα Εργασίας</h4>
+            <ul id="modal-step-list"></ul>
+            <div class="progress-container">
+              <div id="modal-progress" class="progress-bar"></div>
+            </div>
+            <span id="modal-percent">0%</span>
           </div>
-          <span class="badge badge-in-progress">Σε εξέλιξη</span>
         </div>
-        <div class="task-card-body">
-          <p class="due-date">Προθεσμία: <time datetime="2023-05-09">09/05/2023</time></p>
-          <ul class="task-steps">
-            <li class="completed"><input type="checkbox" checked /> Κοπή μεταλλικών μερών</li>
-            <li><input type="checkbox" /> Συναρμολόγηση σκελετού</li>
-            <li><input type="checkbox" /> Έλεγχος ποιότητας</li>
-          </ul>
-        </div>
-        <div class="task-card-footer">
-          <small class="last-updated">15/04/2023</small>
-          <button class="btn-details">Λεπτομέρειες</button>
-        </div>
-      </article>
-
-      <!-- Κάρτα 2 -->
-      <article class="task-card">
-        <div class="task-card-header">
-          <div>
-            <h2>Ραφή υφασμάτων για ομπρέλες</h2>
-            <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
-          </div>
-          <span class="badge badge-pending">Εκκρεμεί</span>
-        </div>
-        <div class="task-card-body">
-          <p class="due-date">Προθεσμία: <time datetime="2023-05-15">15/05/2023</time></p>
-          <ul class="task-steps">
-            <li><input type="checkbox" /> Κοπή υφάσματος</li>
-            <li><input type="checkbox" /> Ραφή περιμετρικά</li>
-            <li><input type="checkbox" /> Προσθήκη λογοτύπου</li>
-          </ul>
-        </div>
-        <div class="task-card-footer">
-          <small class="last-updated">–</small>
-          <button class="btn-details">Λεπτομέρειες</button>
-        </div>
-      </article>
-
-      <!-- Κάρτα 3 -->
-      <article class="task-card">
-        <div class="task-card-header">
-          <div>
-            <h2>Συσκευασία τελικών προϊόντων</h2>
-            <small class="order-info">Παραγγελία: #2 – Προϊόν #2</small>
-          </div>
-          <span class="badge badge-completed">Ολοκληρώθηκε</span>
-        </div>
-        <div class="task-card-body">
-          <p class="due-date">Προθεσμία: <time datetime="2023-05-18">18/05/2023</time></p>
-          <ul class="task-steps">
-            <li class="completed"><input type="checkbox" checked /> Έλεγχος ποιότητας</li>
-            <li class="completed"><input type="checkbox" checked /> Τοποθέτηση σε συσκευασία</li>
-            <li class="completed"><input type="checkbox" checked /> Σήμανση και αποθήκευση</li>
-          </ul>
-        </div>
-        <div class="task-card-footer">
-          <small class="last-updated">17/04/2023</small>
-          <button class="btn-details">Λεπτομέρειες</button>
-        </div>
-      </article>
-
-      <!-- Κάρτα 4 -->
-      <article class="task-card">
-        <div class="task-card-header">
-          <div>
-            <h2>Επισκευή πανιών</h2>
-            <small class="order-info">Παραγγελία: #3 – Προϊόν #52</small>
-          </div>
-          <span class="badge badge-completed">Ολοκληρώθηκε</span>
-        </div>
-        <div class="task-card-body">
-          <p class="due-date">Προθεσμία: <time datetime="2023-05-18">10/05/2023</time></p>
-          <ul class="task-steps">
-            <li class="completed"><input type="checkbox" checked /> Μπάλωμα ατελειών</li>
-            <li class="completed"><input type="checkbox" checked /> Έλεγχος αντοχής</li>
-            <li class="completed"><input type="checkbox" checked /> Συσκευασία</li>
-          </ul>
-        </div>
-        <div class="task-card-footer">
-          <small class="last-updated">17/04/2023</small>
-          <button class="btn-details">Λεπτομέρειες</button>
-        </div>
-      </article>
-    </section>
-  </div>
-
-
-<!-- Modal overlay -->
-<div id="task-modal-overlay" class="modal-overlay hidden">
-  <div class="modal">
-    <button id="modal-close" class="modal-close">×</button>
-    <div id="modal-content">
-      <h3 id="modal-title"></h3>
-      <p class="modal-order" id="modal-order"></p>
-      <p class="modal-dates">
-        Προθεσμία: <span id="modal-due"></span> |
-        Τελευταία ενημέρωση: <span id="modal-updated"></span>
-      </p>
-      <div class="modal-steps">
-        <h4>Βήματα Εργασίας</h4>
-        <ul id="modal-step-list"></ul>
-        <div class="progress-container">
-          <div id="modal-progress" class="progress-bar"></div>
-        </div>
-        <span id="modal-percent">0%</span>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- New Task Modal -->
-<div id="new-task-overlay" class="modal-overlay hidden">
-  <div class="modal">
-    <button id="new-modal-close" class="modal-close">×</button>
-    <h3>Δημιουργία Νέας Εργασίας</h3>
-    <form id="new-task-form">
-      <label>Τίτλος:<br>
-        <input type="text" name="title" required>
-      </label><br>
-      <label>Παραγγελία / Προϊόν:<br>
-        <input type="text" name="orderInfo" required placeholder="#2 – Προϊόν #2">
-      </label><br>
-      <label>Προθεσμία:<br>
-        <input type="date" name="dueDate" required>
-      </label><br>
-      <fieldset>
-        <legend>Βήματα Εργασίας</legend>
-        <div id="steps-container">
-          
-          <!-- αρχικά ένα step -->
-          <div class="step-item">
-            <input type="text" name="step" placeholder="Βήμα 1" required>
-            <button type="button" class="remove-step">–</button>
-          </div>
-        </div>
-        <button id="add-step" type="button">+ Προσθήκη Βήματος</button>
-      </fieldset>
-      <button type="submit" class="btn-new-task">Αποθήκευση</button>
-    </form>
-  </div>
-</div>
+    <script>
+      const loggedUser = localStorage.getItem("loggedUser");
+      fetch("../../json/user_info.json")
+        .then(response => response.json())
+        .then(users => {
+          const user = users.find(u => u.username === loggedUser);
+          if (user) {
+            document.getElementById("role").textContent = user.role;
+          } else {
+            document.getElementById("fullname").textContent = "Χρήστης";
+          }
+        })
+        .catch(error => {
+          console.error("Σφάλμα κατά τη φόρτωση των δεδομένων:", error);
+          document.getElementById("fullname").textContent = "Χρήστης";
+      });
+    </script>
 
-<script src="../../javascript/menu-loader.js"></script>
-<script src="../../javascript/navigations.js"></script>
-<script src="../../javascript/tasks.js"></script>
-</body>
+    <script src="../../javascript/menu-loader.js"></script>
+    <script src="../../javascript/navigations.js"></script>
+    <script src="../../javascript/tasks.js"></script>
+  </body>
 </html>
