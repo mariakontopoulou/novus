@@ -11,26 +11,47 @@
 
   <body>
     <div id="menu"></div>
+
     <div class="main-content">
-      <h1 id="StHeader">Αποθήκη</h1>
-      <input type="Text" placeholder="🔍 Αναζήτηση Πρώτων Υλών" />
-      <button onclick="window.location.href='update-storage.html'">Προσθήκη Υλικού +</button>
-    </div>
-    <div class="Main-table">
-        <table id="materialsTable">
-            <thead>
-                <tr>
-                    <th>Όνομα</th>
-                    <th>Περιγραφή</th>
-                    <th>Διαθέσιμο Απόθεμα</th>
-                    <th>Μονάδα</th>
-                    <th>Προμηθευτής</th>
-                    <th>Ενέργειες</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
+      <div class="header-row">
+        <h2>Αποθήκη</h2>
+        <button onclick="window.location.href='update-storage.html'">Προσθήκη Υλικού +</button>
+      </div>
+      <div class="search-bar">
+        <input type="Text" placeholder="Αναζήτηση Πρώτων Υλών"></div>
+      </div>
+      <div class="table-container">
+        <table class="Main-table" id="materialsTable">
+          <thead>
+            <tr>
+              <th>Όνομα</th>
+              <th>Περιγραφή</th>
+              <th>Απόθεμα</th>
+              <th>Μονάδα</th>
+              <th>Προμηθευτής</th>
+              <th>Ενέργειες</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Πανί Ακρυλικό 300gr/m² – UV Αντοχής - Μπεζ</td>
+              <td>Υψηλής ποιότητας ακρυλικό πανί 300 γραμμαρίων ανά τετραγωνικό, με επεξεργασία UV block και αδιαβροχοποίηση.</td>
+              <td>50</td>
+              <td>μέτρα</td>
+              <td>Dickson</td>
+              <td><button class="action-btn">Προβολή</button></td>
+            </tr>
+            <tr>
+              <td>Βάση Φλάντζα Γαλβανισμένη – Στρογγυλή 250mm</td>
+              <td>Γαλβανισμένη μεταλλική βάση τύπου φλάντζας για πάκτωση σε μπετό, κατάλληλη για ιστούς Ø60mm.</td>
+              <td>30</td>
+              <td>τεμάχια</td>
+              <td>Exalco</td>
+              <td><button class="action-btn">Προβολή</button></td>
+            </tr>
+          </tbody>
         </table>
+      </div>
     </div>
 
     <script src="../../javascript/menu-loader.js"></script>

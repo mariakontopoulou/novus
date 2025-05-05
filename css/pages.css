@@ -8,7 +8,21 @@
 body {
   background-color: #f4f7fb;
 }
+header {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #007bff22, #ffffff00);
+  margin-bottom: 30px;
+}
 
+header h2 {
+  color: #007bff;
+  font-size: 26px;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
 .welcome-text {
   font-size: clamp(14px, 1.1vw, 16px);
   color: #f4f4f4;
