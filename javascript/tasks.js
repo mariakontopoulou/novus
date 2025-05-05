@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="task-card-body">
         <p class="due-date">Προθεσμία: <time datetime="${task.dueDate}">${new Date(task.dueDate).toLocaleDateString('el-GR')}</time></p>
         <ul class="task-steps">
-          ${task.steps.map(step => `<li><input type="checkbox" /> ${step}</li>`).join('')}
+          ${task.steps.map(step => `<li><input type="checkbox"> ${step}</li>`).join('')}
         </ul>
       </div>
       <div class="task-card-footer">
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="due-date">Προθεσμία: <time datetime="${formData.get('dueDate')}">${new Date(formData.get('dueDate')).toLocaleDateString('el-GR')}</time></p>
         <ul class="task-steps">
           ${Array.from(formData.getAll('step')).map(step => 
-            `<li><input type="checkbox" /> ${step}</li>`
+            `<li><input type="checkbox"> ${step}</li>`
           ).join('')}
         </ul>
       </div>

@@ -52,6 +52,33 @@
       </table>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const ordersTableBody = document.querySelector(".orders-table tbody");
+        const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    
+        orders.forEach(order => {
+          const row = document.createElement("tr");
+    
+          row.innerHTML = `
+            <td>#${order.id}</td>
+            <td>${order.customer}</td>
+            <td>${formatDate(order.dateCreated)}</td>
+            <td>${order.deliveryDate || "–"}</td>
+            <td><span class="status ${order.status === 'Εκκρεμεί' ? 'pending' : 'delivered'}">${order.status}</span></td>
+            <td><button class="action-btn">Προβολή</button></td>
+          `;
+    
+          ordersTableBody.appendChild(row);
+        });
+    
+        function formatDate(isoDate) {
+          const [year, month, day] = isoDate.split("-");
+          return `${day}/${month}/${year}`;
+        }
+      });
+    </script>
+    
     <script src="../../javascript/menu-loader.js"></script>
     <script src="../../javascript/navigations.js"></script>
   </body>
