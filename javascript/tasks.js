@@ -78,7 +78,21 @@ const addModalListeners = (card) => {
 document.addEventListener('DOMContentLoaded', () => { 
   const tasksContainer = document.querySelector('.tasks-list');
   const materials = JSON.parse(localStorage.getItem('materials')) || [];
-
+  document.querySelectorAll('.task-card').forEach(card => {
+    initTaskCard(card);
+    addModalListeners(card);
+  });
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.classList.add('hidden');
+      });
+    });
+  });  
+  document.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
+  });
+  
   // Δημιουργία καρτών από localStorage
   materials.forEach(task => {
     const newCard = document.createElement('article');
@@ -173,3 +187,37 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('new-task-overlay').classList.add('hidden');
   });
 });
+
+function loadTasks() {
+  const tasksContainer = document.querySelector('.tasks-list');
+  tasksContainer.innerHTML = ''; // καθαρισμός
+
+  const materials = JSON.parse(localStorage.getItem('materials')) || [];
+
+  materials.forEach(task => {
+    const newCard = document.createElement('article');
+    newCard.className = 'task-card';
+    newCard.innerHTML = `
+      <div class="task-card-header">
+        <div>
+          <h2>${task.title}</h2>
+          <small class="order-info">${task.orderInfo}</small>
+        </div>
+        <span class="badge badge-pending">Εκκρεμεί</span>
+      </div>
+      <div class="task-card-body">
+        <p class="due-date">Προθεσμία: <time datetime="${task.dueDate}">${new Date(task.dueDate).toLocaleDateString('el-GR')}</time></p>
+        <ul class="task-steps">
+          ${task.steps.map(step => `<li><input type="checkbox"> ${step}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="task-card-footer">
+        <small class="last-updated">${new Date().toLocaleDateString('el-GR')}</small>
+        <button class="btn-details">Λεπτομέρειες</button>
+      </div>
+    `;
+    tasksContainer.prepend(newCard);
+    initTaskCard(newCard);
+    addModalListeners(newCard);
+  });
+}
